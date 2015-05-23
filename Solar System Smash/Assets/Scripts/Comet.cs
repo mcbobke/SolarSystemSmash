@@ -3,12 +3,11 @@ using System.Collections;
 
 public class Comet : MonoBehaviour
 {
-    Rigidbody2D rbody;
 
     // Use this for initialization
     void Start()
     {
-        rbody = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
