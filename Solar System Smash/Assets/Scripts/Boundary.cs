@@ -3,9 +3,10 @@ using System.Collections;
 
 public class Boundary : MonoBehaviour
 {
-    private void OnCollsionEnter2D(Collision2D coll)
+    void OnCollisionEnter2D(Collision2D coll)
     {
-        Debug.Log(coll.gameObject.tag);
+        Debug.Log(coll.gameObject.tag + coll.gameObject.name);
+        Debug.Log("this is working");
         if (coll.gameObject.tag == "Projectile")
             Destroy(coll.gameObject);
     }
