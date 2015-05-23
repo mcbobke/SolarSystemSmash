@@ -3,10 +3,15 @@ using System.Collections;
 
 public class Comet : MonoBehaviour
 {
+    public SpriteRenderer spriteRender;
+    public Sprite[] spriteList = new Sprite[8];
 
     // Use this for initialization
     void Start()
     {
+        spriteRender = GetComponent<SpriteRenderer>();
+        int index = (int)Random.Range(1, 8);
+        spriteRender.sprite = spriteList[index];
 
     }
 
