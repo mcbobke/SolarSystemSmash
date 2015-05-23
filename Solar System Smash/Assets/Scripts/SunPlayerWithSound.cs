@@ -44,7 +44,7 @@ public class SunPlayerWithSound : MonoBehaviour
         {
             soundPlayer.PlaySoundEffectLoop("moon_grab", 0.8f);
         }
-        else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
         {
             soundPlayer.StopLoopingPlayback();
         }

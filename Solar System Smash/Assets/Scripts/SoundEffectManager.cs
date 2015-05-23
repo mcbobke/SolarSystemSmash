@@ -9,6 +9,8 @@ public class SoundEffectManager : MonoBehaviour {
     public AudioClip[] clipList = new AudioClip[4];         // Size of array can be changed in Unity Editor
     public Dictionary<string, AudioClip> clipDict = new Dictionary<string, AudioClip>();
 
+    private bool fadingOut = false;         // Messy, but I don't know another way to do it at the moment
+
 	// Use this for initialization
 	void Start() 
     {
@@ -37,8 +39,12 @@ public class SoundEffectManager : MonoBehaviour {
         StartCoroutine("FadeOutLoopingEffect");
     }
 
-    public IEnumerable AudioSourceStopWrapper()
+    public IEnumerable ResetLoopingAudioSource()
     {
+        while (fadingOut)
+        {
+            yield return null;
+        }
         loopingAudioSource.Stop();
         loopingAudioSource.volume = 1.0f;
         yield return null;
@@ -46,12 +52,12 @@ public class SoundEffectManager : MonoBehaviour {
 
     public IEnumerable FadeOutLoopingEffect()
     {
-        while (loopingAudioSource.volume > 0.0f)
+        fadingOut = true;
+        while (loopingAudioSource.volume > 0.1f)
         {
             loopingAudioSource.volume -= 0.1f;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.05f);
         }
-        loopingAudioSource.Stop();
-        loopingAudioSource.volume = 1.0f;
+        fadingOut = false;
     }
 }
