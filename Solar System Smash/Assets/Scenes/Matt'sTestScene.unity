@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41db71678f7df4247be17a8c771f7f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projPrefab: {fileID: 136764, guid: dcd8623501d550a4fb4d9f31128ec2e5, type: 2}
+  projPrefab: {fileID: 169406, guid: ef9d7c088b9e5534ea76493e469f9d5c, type: 2}
   projSpawnPoint: {fileID: 1990912040}
 --- !u!58 &413516339
 CircleCollider2D:
@@ -279,6 +279,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1070336477}
   - 68: {fileID: 1070336478}
+  - 114: {fileID: 1070336479}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -312,6 +313,17 @@ EdgeCollider2D:
   m_Points:
   - {x: -5.71359777, y: -.0491831601}
   - {x: 6.10707474, y: -.0245921724}
+--- !u!114 &1070336479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1070336476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed60b1dfcf3dce4e892d1f9191d1613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1098847294
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +333,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1098847295}
   - 68: {fileID: 1098847296}
+  - 114: {fileID: 1098847297}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -354,6 +367,17 @@ EdgeCollider2D:
   m_Points:
   - {x: -5.71359777, y: -.0491831601}
   - {x: 6.08248329, y: .0245926268}
+--- !u!114 &1098847297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1098847294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed60b1dfcf3dce4e892d1f9191d1613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1460293889
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +418,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1511965929}
   - 68: {fileID: 1511965930}
+  - 114: {fileID: 1511965931}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
@@ -427,6 +452,17 @@ EdgeCollider2D:
   m_Points:
   - {x: -.5, y: 0}
   - {x: 4.6528635, y: -.0146744251}
+--- !u!114 &1511965931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1511965928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed60b1dfcf3dce4e892d1f9191d1613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1747509206
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +526,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1902547523}
   - 68: {fileID: 1902547522}
+  - 114: {fileID: 1902547524}
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
@@ -523,6 +560,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1460293890}
   m_RootOrder: 0
+--- !u!114 &1902547524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1902547521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed60b1dfcf3dce4e892d1f9191d1613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1990912040
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - LeftBoundary
   - Comet
+  - Fire
+  - Projectile
   layers:
   - Default
   - TransparentFX
