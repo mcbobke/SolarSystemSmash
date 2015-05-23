@@ -29,7 +29,14 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 														GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																					GlobalSection(MonoDevelopProperties) = preSolution
+=======
+			GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> parent of 134c356... Colliders, colliders, colliders
+>>>>>>> 22baae3c9a694434bdbb31d7cf6229662484c36d
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

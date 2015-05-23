@@ -4,7 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Comet
+=======
+  - LeftBoundary
+  - Comet
+  - Fire
+  - Projectile
+>>>>>>> 22baae3c9a694434bdbb31d7cf6229662484c36d
   layers:
   - Default
   - TransparentFX
@@ -39,6 +46,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1196248969
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 2312911953
     locked: 0
