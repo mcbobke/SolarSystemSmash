@@ -8,6 +8,9 @@ public class SunPlayer : MonoBehaviour
     private bool inputFlipped;
     private Vector3 mousePosition;
 
+    public GameObject projPrefab;
+    public GameObject projSpawnPoint;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -46,12 +49,13 @@ public class SunPlayer : MonoBehaviour
 
         // Fire
         if (Input.GetMouseButtonDown(0))
-            Fire();
+            Fire(mousePosition);
     }
 
-    private void Fire()
+    private void Fire(Vector3 mousePosition)
     {
-        
-
+        Quaternion projRotation = transform.rotation;
+        GameObject proj = (GameObject)Instantiate(projPrefab, projSpawnPoint.transform.position, projRotation);
+        proj.GetComponent<Rigidbody2D>().AddForce(proj.transform.up * 500f);
     }
 }
