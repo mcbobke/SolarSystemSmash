@@ -14,6 +14,7 @@ public class CometSpawner : MonoBehaviour
     public float xSpeedMin = 50.0f;
     public float xSpeedMax = 100.0f;
     public float ySpeedScaling = 50.0f;
+    public bool turnedOn = true;
 
     private float currentTime;
     private float nextSpawnTime;
@@ -40,10 +41,13 @@ public class CometSpawner : MonoBehaviour
     void Update()
     {
         currentTime = Time.fixedTime;
-
+        
         if (currentTime >= nextSpawnTime)
         {
-            FireComet();
+            if (turnedOn)
+            {
+                FireComet();
+            }
             nextSpawnTime += Random.Range(spawnRateMin, spawnRateMin + spawnRateRange);
         }
 
@@ -70,6 +74,16 @@ public class CometSpawner : MonoBehaviour
         // 0.4f is an offset that's supposed to prevent most comets from going off screen before they get to left side
         ySpeedMax = ((yDirection * (SCREEN_HEIGHT - 0.4f) - startingYcoord) / SCREEN_LENGTH) * ySpeedScaling;
         ySpeed = Random.Range(0.0f, ySpeedMax);
+    }
+
+    public void TurnSpawningOn()
+    {
+        turnedOn = true;
+    }
+
+    public void TurnSpawningOff()
+    {
+        turnedOn = false;
     }
 
 }

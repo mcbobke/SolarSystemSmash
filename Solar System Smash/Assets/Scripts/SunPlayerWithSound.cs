@@ -39,6 +39,16 @@ public class SunPlayerWithSound : MonoBehaviour
                 rb.AddForce(movement);
         }
 
+        // Testing out a looping sound effect
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            soundPlayer.PlaySoundEffectLoop("moon_grab", 0.8f);
+        }
+        else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            soundPlayer.StopLoopingPlayback();
+        }
+
         // Getting mouse position and then making sure that the sun faces the mouse with it's "up" vector
         mousePosition = Input.mousePosition;
 
