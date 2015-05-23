@@ -14,7 +14,7 @@ public class SunPlayer : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.P))
             rb.AddForce(movement);
     }
 }
