@@ -8,6 +8,7 @@ TagManager:
   - Comet
   - Fire
   - Projectile
+  - Moon
   layers:
   - Default
   - TransparentFX

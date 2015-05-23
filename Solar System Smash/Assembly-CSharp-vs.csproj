@@ -48,17 +48,21 @@
   <ItemGroup>
      <Compile Include="Assets\Elementals\Scripts\OrbitCamera.cs" />
      <Compile Include="Assets\Elementals\Scripts\TestParticles.cs" />
+     <Compile Include="Assets\Scripts\BluePlanet.cs" />
      <Compile Include="Assets\Scripts\Boundary.cs" />
      <Compile Include="Assets\Scripts\Comet.cs" />
      <Compile Include="Assets\Scripts\CometScript.cs" />
      <Compile Include="Assets\Scripts\CometSpawner.cs" />
      <Compile Include="Assets\Scripts\ExitButton.cs" />
+     <Compile Include="Assets\Scripts\GreenPlanet.cs" />
      <Compile Include="Assets\Scripts\MenuMoon.cs" />
      <Compile Include="Assets\Scripts\MenuSun.cs" />
      <Compile Include="Assets\Scripts\MoonPlayer.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\SoundEffectManager.cs" />
      <Compile Include="Assets\Scripts\StartButton.cs" />
      <Compile Include="Assets\Scripts\SunPlayer.cs" />
+     <Compile Include="Assets\Scripts\SunPlayerWithSound.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

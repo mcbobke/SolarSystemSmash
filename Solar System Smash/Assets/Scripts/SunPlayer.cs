@@ -19,6 +19,11 @@ public class SunPlayer : MonoBehaviour
         mousePosition = Input.mousePosition;
     }
 
+	public void flipInput()
+	{
+		inputFlipped = !inputFlipped;
+	}
+
     private void Update()
     {
         // Input for movement

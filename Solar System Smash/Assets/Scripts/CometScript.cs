@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CometScript : MonoBehaviour {
 	
-	public static bool nearMoon = false;
+	private bool nearMoon = false;
 	public Transform target;
 	private Vector3 offset;
 	private int count = 1;
@@ -13,7 +13,12 @@ public class CometScript : MonoBehaviour {
 		
 		rb = GetComponent<Rigidbody2D> ();
 	}
-	
+
+	void setNearMoon()
+	{
+		nearMoon = true;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -30,7 +35,7 @@ public class CometScript : MonoBehaviour {
 			//rb.AddForce((target.transform.position - transform.position) * 100 * Time.deltaTime);
 			
 			//transform.position = target.transform.position + offset;
-			transform.RotateAround (target.transform.position, Vector3.forward/*new Vector3(0.5f,0,0.5f)*/, 5);
+			transform.RotateAround (target.transform.position, Vector3.forward, 5);
 			
 		}
 		
