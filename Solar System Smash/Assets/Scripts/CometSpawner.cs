@@ -55,8 +55,8 @@ public class CometSpawner : MonoBehaviour
 
         GameObject Clone;
 
-        // 0.3f is an offset that keeps the comet's CircleCollider from colliding with the right side of the screen at spawn
-        Clone = (Instantiate(cometPrefab, new Vector3(SCREEN_RIGHT - 0.3f, startingYcoord, 0.0f), transform.rotation)) as GameObject;
+        // 0.5f is an offset that keeps the comet's CircleCollider from colliding with the right side of the screen at spawn
+        Clone = (Instantiate(cometPrefab, new Vector3(SCREEN_RIGHT - 0.5f, startingYcoord, 0.0f), transform.rotation)) as GameObject;
         Clone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-xSpeed, ySpeed));
     }
 
