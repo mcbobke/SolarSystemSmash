@@ -3,22 +3,24 @@ using System.Collections;
 
 public class SunPlayer : MonoBehaviour
 {
-    public Rigidbody2D rb;
-<<<<<<< HEAD
-    private Vector2 movement = new Vector2(0f, 10f);
-=======
-    private Vector2 movement = new Vector2(0f, 5f);
->>>>>>> parent of 134c356... Colliders, colliders, colliders
+    private Rigidbody2D rb;
+    private Vector2 movement;
+    private bool inputFlipped;
 
     // Use this for initialization
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        movement = new Vector2(0f, 5f);
+        inputFlipped = false;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
             rb.AddForce(movement);
+        else if (Input.GetKey(KeyCode.DownArrow))
+            rb.AddForce(-movement);
     }
 }
