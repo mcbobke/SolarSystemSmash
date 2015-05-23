@@ -3,6 +3,11 @@ using System.Collections;
 
 public class Comet : MonoBehaviour
 {
+	public static bool nearMoon = false; 			// NISH
+	public Transform target;						// NISH
+	private int count = 1;							// NISH
+	private Rigidbody2D rb;							// NISH
+
     public SpriteRenderer spriteRender;
     public Sprite[] spriteList = new Sprite[8];
 
@@ -13,12 +18,28 @@ public class Comet : MonoBehaviour
         int index = (int)Random.Range(1, 8);
         spriteRender.sprite = spriteList[index];
 
+		rb = GetComponent<Rigidbody2D> ();			// NISH
     }
 
     // Update is called once per frame
     void Update()
     {
-
+		if (!nearMoon) {
+			
+		} else {
+			
+			if(count == 1)
+			{
+				//offset = transform.position - target.transform.position;
+				count++;
+			}
+			
+			//rb.AddForce((target.transform.position - transform.position) * 100 * Time.deltaTime);
+			
+			//transform.position = target.transform.position + offset;
+			transform.RotateAround (target.transform.position, Vector3.forward, 1);
+			
+		}
     }
 
     void OnBecameInvisible()
