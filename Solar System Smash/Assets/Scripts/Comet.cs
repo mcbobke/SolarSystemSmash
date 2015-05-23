@@ -3,11 +3,12 @@ using System.Collections;
 
 public class Comet : MonoBehaviour
 {
+    Rigidbody2D rbody;
 
     // Use this for initialization
     void Start()
     {
-
+        rbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -22,9 +23,21 @@ public class Comet : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    void OnCollisionEnter()
+    void OnCollisionEnter2D(Collision2D other)
     {
-        // TODO: player health or something
-        Destroy(this.gameObject);
+        // TODO: if other was with left side of screen, decrement shared player health or something; destroy object
+        //       if other was with the sun, just destroy object; increment something?
+        //       if other was with the moon, decrement moon health, destroy object
+
+        if (other.gameObject.tag == "LeftBoundary")
+        {
+            Debug.Log("Comet passed the sun.");
+            Destroy(this.gameObject); 
+            // Decrement shared player health or something
+        }
+        else if (other.gameObject.tag != "Comet") 
+        {
+            Destroy(this.gameObject); 
+        }
     }
 }

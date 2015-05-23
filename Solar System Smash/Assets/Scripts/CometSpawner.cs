@@ -9,13 +9,15 @@ public class CometSpawner : MonoBehaviour
     //public float directionVariation;
     //public float speedVariation;
 
-    public const float XSPEED_MAX = 200.0f;
-
     private const float SCREEN_RIGHT = 9.0f;
     private const float SCREEN_LENGTH = 9.0f;
     private const float SCREEN_HEIGHT = 5.0f;
 
     public GameObject cometPrefab;
+    public float spawnRateMin = 0.5f;
+    public float spawnRateRange = 0.5f;
+    public float xSpeedMin = 50.0f;
+    public float xSpeedMax = 200.0f;
     public float ySpeedScaling = 50.0f;
 
     private float currentTime;
@@ -34,7 +36,7 @@ public class CometSpawner : MonoBehaviour
     {
         rand = new System.Random();
         currentTime = Time.fixedTime;
-        nextSpawnTime = currentTime + Random.Range(0.5f, 1.0f);
+        nextSpawnTime = currentTime + Random.Range(spawnRateMin, spawnRateMin + spawnRateRange);
 
         GenerateNewCometValues();        
     }
@@ -47,16 +49,10 @@ public class CometSpawner : MonoBehaviour
         if (currentTime >= nextSpawnTime)
         {
             FireComet();
-            nextSpawnTime += + Random.Range(0.5f, 1.0f);
-            Debug.Log("nextSpawnTime " + nextSpawnTime);
+            nextSpawnTime += Random.Range(spawnRateMin, spawnRateMin + spawnRateRange);
+            // Debug.Log("nextSpawnTime " + nextSpawnTime);
         }
 
-        //// Temp test
-        //if (fireCount < 6)
-        //{
-        //    FireComet();
-        //    fireCount++;
-        //}
     }
 
     void FireComet()
@@ -65,19 +61,22 @@ public class CometSpawner : MonoBehaviour
 
         GameObject Clone;
 
-        Clone = (Instantiate(cometPrefab, new Vector3(SCREEN_RIGHT, startingYcoord, 0.0f), transform.rotation)) as GameObject;
+        // 0.3f is an offset that keeps the comet's CircleCollider from colliding with the right side of the screen at spawn
+        Clone = (Instantiate(cometPrefab, new Vector3(SCREEN_RIGHT - 0.3f, startingYcoord, 0.0f), transform.rotation)) as GameObject;
         Clone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-xSpeed, ySpeed));
-        Debug.Log("Spawned a comet with starting coordinate: "+startingYcoord+", xSpeed "+xSpeed+", ySpeed "+ySpeed);
+        // Debug.Log("Spawned a comet with starting coordinate: "+startingYcoord+", xSpeed "+xSpeed+", ySpeed "+ySpeed);
     }
 
     void GenerateNewCometValues()
     {
-        xSpeed = Random.Range(50.0f, XSPEED_MAX);
+        xSpeed = Random.Range(xSpeedMin, xSpeedMax);
 
         startingYcoord = Random.Range(-4.8f, 4.8f);
         yDirection = (rand.Next(2) == 0) ? 1 : -1;      // Determines the sign for ySpeed
-        ySpeedMax = ((yDirection * (SCREEN_HEIGHT - 0.1f) - startingYcoord) / SCREEN_LENGTH) * ySpeedScaling;
-        ySpeed = Random.Range(5.0f, ySpeedMax);
+
+        // 0.4f is an offset that's supposed to prevent most comets from going off screen before they get to left side
+        ySpeedMax = ((yDirection * (SCREEN_HEIGHT - 0.4f) - startingYcoord) / SCREEN_LENGTH) * ySpeedScaling;
+        ySpeed = Random.Range(0.0f, ySpeedMax);
     }
 
 }
