@@ -37,7 +37,7 @@ public class Comet : MonoBehaviour
 			//rb.AddForce((target.transform.position - transform.position) * 100 * Time.deltaTime);
 			
 			//transform.position = target.transform.position + offset;
-			transform.RotateAround (target.transform.position, Vector3.forward, 1);
+			transform.RotateAround (target.transform.position, Vector3.forward, 5);
 			
 		}
     }
@@ -63,9 +63,9 @@ public class Comet : MonoBehaviour
         else if (other.gameObject.name == "Moon")
         {
             // Decrement moon health
-            Destroy(this.gameObject); 
+            // Destroy(this.gameObject); 
         }
-        else if (other.gameObject.tag != "Comet") 
+        else if (other.gameObject.tag != "Comet" && other.gameObject.tag != "Moon") 
         {
             Destroy(this.gameObject); 
         }

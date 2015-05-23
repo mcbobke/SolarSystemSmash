@@ -54,7 +54,7 @@ public class MoonPlayer : MonoBehaviour {
 		
 	}
 	
-	void OnTriggerEnter2D(Collider2D col) {
+	void OnCollisionEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Comet") {
 			//col.gameObject.BroadcastMessage("ApplyDamage", damage);
 			
