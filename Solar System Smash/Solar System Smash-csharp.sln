@@ -29,10 +29,9 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
-														GlobalSection(MonoDevelopProperties) = preSolution
+																			GlobalSection(MonoDevelopProperties) = preSolution
 =======
-																					GlobalSection(MonoDevelopProperties) = preSolution
+																				GlobalSection(MonoDevelopProperties) = preSolution
 =======
 			GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> parent of 134c356... Colliders, colliders, colliders
