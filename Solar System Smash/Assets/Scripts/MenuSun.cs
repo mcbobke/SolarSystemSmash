@@ -4,7 +4,7 @@ using System.Collections;
 public class MenuSun : MonoBehaviour {
     //edit these values to put in 
     float maxupanddown = 1;
-    float speed = 60;
+    float speed = 100;
     float angle = 0;
     float todegrees = Mathf.PI/180;
     public Vector3 localPosition;
