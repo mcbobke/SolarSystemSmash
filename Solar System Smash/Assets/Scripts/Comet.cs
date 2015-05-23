@@ -24,6 +24,7 @@ public class Comet : MonoBehaviour
 
     void OnCollisionEnter()
     {
+        // TODO: player health or something
         Destroy(this.gameObject);
     }
 }
