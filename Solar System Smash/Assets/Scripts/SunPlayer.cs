@@ -21,10 +21,6 @@ public class SunPlayer : MonoBehaviour
 
     private void Update()
     {
-<<<<<<< HEAD
-        if (Input.GetKey(KeyCode.P))
-            rb.AddForce(movement);
-=======
         // Input for movement
         if (!inputFlipped)
         {
@@ -61,6 +57,5 @@ public class SunPlayer : MonoBehaviour
         Quaternion projRotation = transform.rotation;
         GameObject proj = (GameObject)Instantiate(projPrefab, projSpawnPoint.transform.position, projRotation);
         proj.GetComponent<Rigidbody2D>().AddForce(proj.transform.up * 500f);
->>>>>>> 22baae3c9a694434bdbb31d7cf6229662484c36d
     }
 }

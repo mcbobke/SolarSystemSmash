@@ -4,14 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - Comet
-=======
   - LeftBoundary
   - Comet
   - Fire
   - Projectile
->>>>>>> 22baae3c9a694434bdbb31d7cf6229662484c36d
   layers:
   - Default
   - TransparentFX
