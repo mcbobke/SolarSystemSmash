@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41db71678f7df4247be17a8c771f7f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projPrefab: {fileID: 116426, guid: 736029706cf174446889aaedaa5a26f5, type: 2}
+  projPrefab: {fileID: 136764, guid: dcd8623501d550a4fb4d9f31128ec2e5, type: 2}
   projSpawnPoint: {fileID: 1990912040}
 --- !u!58 &413516339
 CircleCollider2D:
