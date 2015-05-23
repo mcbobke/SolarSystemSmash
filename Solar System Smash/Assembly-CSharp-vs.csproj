@@ -48,9 +48,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Comet.cs" />
      <Compile Include="Assets\Scripts\CometSpawner.cs" />
+     <Compile Include="Assets\Scripts\ExitButton.cs" />
      <Compile Include="Assets\Scripts\MenuMoon.cs" />
      <Compile Include="Assets\Scripts\MenuSun.cs" />
      <Compile Include="Assets\Scripts\MoonPlayer.cs" />
+     <Compile Include="Assets\Scripts\StartButton.cs" />
      <Compile Include="Assets\Scripts\SunPlayer.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
