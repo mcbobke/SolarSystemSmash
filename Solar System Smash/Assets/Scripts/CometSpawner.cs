@@ -5,9 +5,6 @@ using System.Collections;
 public class CometSpawner : MonoBehaviour
 {
     // Arguments to control the difficulty of the comet spawns
-    //public float spawnRate;
-    //public float directionVariation;
-    //public float speedVariation;
 
     private const float SCREEN_RIGHT = 9.0f;
     private const float SCREEN_LENGTH = 9.0f;
@@ -17,7 +14,7 @@ public class CometSpawner : MonoBehaviour
     public float spawnRateMin = 0.5f;
     public float spawnRateRange = 0.5f;
     public float xSpeedMin = 50.0f;
-    public float xSpeedMax = 200.0f;
+    public float xSpeedMax = 100.0f;
     public float ySpeedScaling = 50.0f;
 
     private float currentTime;

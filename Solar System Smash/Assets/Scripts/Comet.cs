@@ -32,8 +32,13 @@ public class Comet : MonoBehaviour
         if (other.gameObject.tag == "LeftBoundary")
         {
             Debug.Log("Comet passed the sun.");
-            Destroy(this.gameObject); 
             // Decrement shared player health or something
+            Destroy(this.gameObject); 
+        }
+        else if (other.gameObject.name == "Moon")
+        {
+            // Decrement moon health
+            Destroy(this.gameObject); 
         }
         else if (other.gameObject.tag != "Comet") 
         {
