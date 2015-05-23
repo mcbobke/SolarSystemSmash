@@ -4,10 +4,8 @@ using System.Collections;
 
 public class CometSpawner : MonoBehaviour
 {
-    // Arguments to control the difficulty of the comet spawns
-
     private const float SCREEN_RIGHT = 9.0f;
-    private const float SCREEN_LENGTH = 9.0f;
+    private const float SCREEN_LENGTH = 18.0f;
     private const float SCREEN_HEIGHT = 5.0f;
 
     public GameObject cometPrefab;
@@ -47,7 +45,6 @@ public class CometSpawner : MonoBehaviour
         {
             FireComet();
             nextSpawnTime += Random.Range(spawnRateMin, spawnRateMin + spawnRateRange);
-            // Debug.Log("nextSpawnTime " + nextSpawnTime);
         }
 
     }
@@ -61,7 +58,6 @@ public class CometSpawner : MonoBehaviour
         // 0.3f is an offset that keeps the comet's CircleCollider from colliding with the right side of the screen at spawn
         Clone = (Instantiate(cometPrefab, new Vector3(SCREEN_RIGHT - 0.3f, startingYcoord, 0.0f), transform.rotation)) as GameObject;
         Clone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-xSpeed, ySpeed));
-        // Debug.Log("Spawned a comet with starting coordinate: "+startingYcoord+", xSpeed "+xSpeed+", ySpeed "+ySpeed);
     }
 
     void GenerateNewCometValues()
