@@ -509,7 +509,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e1d76d25d3e4e968cbd94034b1a9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearMoon: 0
   target: {fileID: 533675901}
+  offset: {x: 0, y: 0, z: 0}
+  count: 1
+  rb: {fileID: 0}
 --- !u!58 &1238059726
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -729,7 +733,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e1d76d25d3e4e968cbd94034b1a9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearMoon: 0
   target: {fileID: 533675901}
+  offset: {x: 0, y: 0, z: 0}
+  count: 1
+  rb: {fileID: 0}
 --- !u!58 &1977838768
 CircleCollider2D:
   m_ObjectHideFlags: 0

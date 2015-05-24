@@ -51,7 +51,6 @@
      <Compile Include="Assets\Scripts\BluePlanet.cs" />
      <Compile Include="Assets\Scripts\Boundary.cs" />
      <Compile Include="Assets\Scripts\Comet.cs" />
-     <Compile Include="Assets\Scripts\CometScript.cs" />
      <Compile Include="Assets\Scripts\CometSpawner.cs" />
      <Compile Include="Assets\Scripts\ExitButton.cs" />
      <Compile Include="Assets\Scripts\GreenPlanet.cs" />
@@ -63,7 +62,6 @@
      <Compile Include="Assets\Scripts\PlanetRandomMovement.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\RedPlanet.cs" />
-     <Compile Include="Assets\Scripts\SingleCometSpawn.cs" />
      <Compile Include="Assets\Scripts\SoundEffectPlayer.cs" />
      <Compile Include="Assets\Scripts\StartButton.cs" />
      <Compile Include="Assets\Scripts\SunPlayer.cs" />
