@@ -1,26 +1,46 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class MoonPlayer : MonoBehaviour {
 	
-	public Rigidbody2D rb;
+	private Rigidbody2D rb;
 	private float speed;
 	private bool isControlSwitched = false;
 	private bool greenPlanet = false;
 	public Transform target;
-    public static int cometCount = 0;					
-
-	private Texture2D sprintBar;
-	private GUIStyle style;
+    public static int cometCount = 0;	
+	private int health = 5;
+	private Vector3 healthPos;
+	private bool immune = false;
+	private float timer;
+	private bool controlSwitchState;
+	public Slider healthBarSliderMoon;
 
 	// Use this for initialization
 	void Start () {
-		sprintBar = new Texture2D(5, 3);
-		style = new GUIStyle();
+
 		speed = 250;
 		rb = GetComponent<Rigidbody2D>();
 	    cometCount = 0;
+		controlSwitchState = isControlSwitched;
+
+	}
+
+	void gainHealth()
+	{
+		if(healthBarSliderMoon.value > 0 && healthBarSliderMoon.value < healthBarSliderMoon.maxValue)
+		{
+			healthBarSliderMoon.value += 0.011f;
+		}
+	}
+
+	void applyDamage()
+	{
+		if (!immune) {
+			healthBarSliderMoon.value -= 0.011f;
+		}
 	}
 	
 	/*void FixedUpdate()
@@ -31,10 +51,35 @@ public class MoonPlayer : MonoBehaviour {
 		rb.velocity = new Vector2 (Mathf.Lerp (0, Input.GetAxis ("Horizontal") * speed, 0.8f),
 		                                   Mathf.Lerp (0, Input.GetAxis ("Vertical") * speed, 0.8f));
 	}*/
+
+	void setImmune()
+	{
+		immune = true;
+		isControlSwitched = false;
+		timer = 10;
+	}
 	
 	void Update () {
 
-		if (greenPlanet) {
+		if (immune && timer > 0) {
+
+			timer -= Time.deltaTime;
+
+		}
+		if (timer <= 0) {
+
+			immune = false;
+			isControlSwitched = controlSwitchState;
+
+		}
+
+		if (health == 0) {
+
+
+
+		}
+
+		if (greenPlanet && !immune) {
 
 			rb.AddForce((target.transform.position - transform.position) * 20 * Time.deltaTime);
 
@@ -86,6 +131,7 @@ public class MoonPlayer : MonoBehaviour {
 	void switchControls()
 	{
 		isControlSwitched = !isControlSwitched;
+		controlSwitchState = isControlSwitched;
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
@@ -96,9 +142,13 @@ public class MoonPlayer : MonoBehaviour {
                 col.gameObject.BroadcastMessage("setNearMoon");
 			} 
 		}
+
+		if (col.gameObject.tag == "Projectile(clone)" && healthBarSliderMoon.value > 0) {
+
+			healthBarSliderMoon.value -= 0.011f;
+
+		}
 	}
-
-
 
 	/*void OnGUI() {
 		

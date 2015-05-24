@@ -4,7 +4,7 @@ using System.Collections;
 public class Comet : MonoBehaviour
 {
 	private bool nearMoon = false; 			// NISH
-	private Transform target;						// NISH
+	//private Transform target;						// NISH
 	private Rigidbody2D rb;							// NISH
 	private int count = 1;	
 	private Vector3 offset;
@@ -20,16 +20,11 @@ public class Comet : MonoBehaviour
 			transform.parent = GameObject.FindGameObjectWithTag("Moon").transform;
 		}
 	}
-
-	void resetComet()
-	{
-		transform.position += offset;
-	}
-
-	void ignoreCollisions()
+	
+	/*void ignoreCollisions()
 	{
 		Physics2D.IgnoreCollision(GameObject.FindGameObjectWithTag ("Moon").GetComponent<Collider2D>(),GetComponent<Collider2D>(),true);
-	}
+	}*/
 
     // Use this for initialization
     void Start()
@@ -37,7 +32,7 @@ public class Comet : MonoBehaviour
         spriteRender = GetComponent<SpriteRenderer>();
         int index = (int)Random.Range(1, 8);
         spriteRender.sprite = spriteList[index];
-        target = GameObject.Find("cartoon-moon").transform;
+        //target = GameObject.Find("cartoon-moon").transform;
 
 		rb = GetComponent<Rigidbody2D> ();			// NISH
     }
@@ -47,19 +42,18 @@ public class Comet : MonoBehaviour
     {
 		if (nearMoon) {
 
-			/*if(count == 1)
+			if(count == 1)
 			{
-				offset = transform.position - target.transform.position;
+				offset = transform.position - transform.parent.position;
 				count++;
-			}*/
+			}
 		
-			if((transform.parent.position-transform.position).sqrMagnitude > rotateScript.offset.sqrMagnitude + 1)
+			if((transform.parent.position-transform.position).sqrMagnitude > offset.sqrMagnitude + 1)
 			{
-				Debug.Log ("hey");
+				//Debug.Log ("hey");
 				rb.AddForce((transform.parent.position - transform.position) * 30 * Time.deltaTime); // NOT REALLY NECESSARY
 				//transform.position = target.transform.position + offset;
 			}
-			
 			transform.RotateAround (transform.parent.position, Vector3.forward, 4);
 
 
