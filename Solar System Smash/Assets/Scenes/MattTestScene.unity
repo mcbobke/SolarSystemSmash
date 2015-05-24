@@ -141,6 +141,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!1001 &328956290
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &332660146
 Prefab:
   m_ObjectHideFlags: 0
@@ -715,6 +757,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4abeea772a57ee4490be61655bd0b95, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1997988799
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11435770, guid: 2b41b00173490ed47ba52b8554e0dd9d,
+    type: 2}
+  m_PrefabInternal: {fileID: 328956290}
+  m_Script: {fileID: 11500000, guid: c9f38da884dc80b4684c79ccd00ceb18, type: 3}
 --- !u!1 &2099493007
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projPrefab: {fileID: 169406, guid: ef9d7c088b9e5534ea76493e469f9d5c, type: 2}
   projSpawnPoint: {fileID: 1780566280}
+  soundEffectPlayer: {fileID: 1997988799}
 --- !u!50 &2099493010
 Rigidbody2D:
   m_ObjectHideFlags: 0

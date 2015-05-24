@@ -5,12 +5,12 @@ public class Projectile : MonoBehaviour
 {
     private float timeAlive;
 
-    void Start()
+    private void Start()
     {
         timeAlive = 0f;
     }
 
-    void Update()
+    private void Update()
     {
         timeAlive += Time.deltaTime;
 
@@ -19,7 +19,8 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnCollisionEnter2D(Collision2D coll)
+
+    private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Comet")
         {

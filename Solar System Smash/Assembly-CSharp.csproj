@@ -64,7 +64,7 @@
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\RedPlanet.cs" />
      <Compile Include="Assets\Scripts\SingleCometSpawn.cs" />
-     <Compile Include="Assets\Scripts\SoundEffectManager.cs" />
+     <Compile Include="Assets\Scripts\SoundEffectPlayer.cs" />
      <Compile Include="Assets\Scripts\StartButton.cs" />
      <Compile Include="Assets\Scripts\SunPlayer.cs" />
      <Compile Include="Assets\Scripts\ToMainMenu.cs" />

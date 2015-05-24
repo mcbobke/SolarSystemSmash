@@ -1,28 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ExitButton : MonoBehaviour {
-
+public class ExitButton : MonoBehaviour
+{
     //public Renderer rend;
     public GameObject myVisible;
 
-    void Start()
+    private void Start()
     {
         //rend = GetComponent<Renderer>();
         myVisible.SetActive(false);
     }
 
-    void OnMouseEnter()
+    private void OnMouseEnter()
     {
         myVisible.SetActive(true);
     }
 
-    void OnMouseExit()
+    private void OnMouseExit()
     {
         myVisible.SetActive(false);
     }
-	
-	void OnMouseDown() {
-		Application.Quit();
-	}
+
+    private void OnMouseDown()
+    {
+        Application.Quit();
+    }
 }

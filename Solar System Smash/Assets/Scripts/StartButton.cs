@@ -1,26 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StartButton: MonoBehaviour {
-	//public Renderer rend;
+public class StartButton : MonoBehaviour
+{
+    //public Renderer rend;
     public GameObject myVisible;
 
-	void Start() {
-		//rend = GetComponent<Renderer>();
+    private void Start()
+    {
+        //rend = GetComponent<Renderer>();
         myVisible.SetActive(false);
-	}
+    }
 
-	void OnMouseEnter()
-	{
-        myVisible.SetActive(true); 
-	}
+    private void OnMouseEnter()
+    {
+        myVisible.SetActive(true);
+    }
 
-	void OnMouseExit() {
+    private void OnMouseExit()
+    {
         myVisible.SetActive(false);
-	}
+    }
 
-    void OnMouseDown() {
-		Application.LoadLevel("main");
-	}
-
+    private void OnMouseDown()
+    {
+        Application.LoadLevel("main");
+    }
 }
