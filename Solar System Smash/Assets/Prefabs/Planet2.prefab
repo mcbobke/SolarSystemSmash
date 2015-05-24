@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5051094}
   - 114: {fileID: 11468944}
   - 58: {fileID: 5822748}
+  - 114: {fileID: 11414420}
   m_Layer: 0
   m_Name: Planet2
   m_TagString: Untagged
@@ -59,6 +60,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .689999998
+--- !u!114 &11414420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc96836b497a36b439d632f5f625194d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTimeSinceLastMovementChange: 0
+  maxTimeSinceLastAddForce: 0
+  maxMovementSpeed: 0
 --- !u!114 &11468944
 MonoBehaviour:
   m_ObjectHideFlags: 1
