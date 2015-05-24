@@ -4,8 +4,8 @@ using System.Collections;
 public class MenuMoon : MonoBehaviour
 {
     //edit these values for maximum floating positions, speed and interpolation
-    private float maxupanddown = -1;
-    private float speed = 100;
+    public float maxupanddown = -1;
+    public float speed = 100;
     private float angle = 0;
     private float todegrees = Mathf.PI/180;
     public Vector3 localPosition;
