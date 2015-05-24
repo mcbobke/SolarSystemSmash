@@ -9,6 +9,10 @@ TagManager:
   - Fire
   - Projectile
   - Moon
+  - Planet
+  - TopBoundary
+  - RightBoundary
+  - BottomBoundary
   layers:
   - Default
   - TransparentFX
