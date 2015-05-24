@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\StartButton.cs" />
      <Compile Include="Assets\Scripts\SunPlayer.cs" />
      <Compile Include="Assets\Scripts\ToMainMenu.cs" />
+     <Compile Include="Assets\rotateScript.cs" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\Elementals\!Readme.txt" />

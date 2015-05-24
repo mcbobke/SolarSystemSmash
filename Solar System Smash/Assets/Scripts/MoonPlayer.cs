@@ -10,10 +10,14 @@ public class MoonPlayer : MonoBehaviour {
 	private bool greenPlanet = false;
 	public Transform target;
     public static int cometCount = 0;					
-	
+
+	private Texture2D sprintBar;
+	private GUIStyle style;
+
 	// Use this for initialization
 	void Start () {
-		
+		sprintBar = new Texture2D(5, 3);
+		style = new GUIStyle();
 		speed = 250;
 		rb = GetComponent<Rigidbody2D>();
 	    cometCount = 0;
@@ -93,5 +97,23 @@ public class MoonPlayer : MonoBehaviour {
 			} 
 		}
 	}
+
+
+
+	/*void OnGUI() {
+		
+		sprintBar.SetPixel(0, 0, Color.red);
+		sprintBar.Apply();
+		style.normal.background = sprintBar;
+		GUI.Box(new Rect(0, Screen.height - 25, Screen.width * (1 - 3 / 3), 25), GUIContent.none, style);
+
+		GUI.skin.label.fontSize = 30;
+		GUIStyle s = GUI.skin.GetStyle("Label");
+		s.normal.textColor = Color.white;
+		s.fontStyle = FontStyle.Bold;
+		s.alignment = TextAnchor.UpperLeft;
+		
+		
+	}*/
 
 }
