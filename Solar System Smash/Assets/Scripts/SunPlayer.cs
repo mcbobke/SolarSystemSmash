@@ -71,7 +71,7 @@ public class SunPlayer : MonoBehaviour
         if (coll.gameObject.tag == "Comet" && healthBarSlider.value > 0)
         {
             Destroy(coll.gameObject);
-            healthBarSlider.value -= .011f;  //reduce health
+            healthBarSlider.value -= .2f;  //reduce health
         }
       //  elseif() // for alleged game over screen 
     //    {
