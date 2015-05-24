@@ -40,6 +40,11 @@ public class SunPlayer : MonoBehaviour
 		}
 	}
 
+	private void reduceHealth()
+	{
+		healthBarSlider.value -= .2f;  //reduce health
+	}
+
     public void flipInput()
     {
 		inputFlipped = !inputFlipped;
@@ -106,10 +111,10 @@ public class SunPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Comet" && healthBarSlider.value > 0)
+        if (coll.gameObject.tag == "Comet")// && healthBarSlider.value > 0)
         {
             Destroy(coll.gameObject);
-            healthBarSlider.value -= .2f;  //reduce health
+            //healthBarSlider.value -= .2f;  //reduce health
         }
       //  elseif() // for alleged game over screen 
     //    {
