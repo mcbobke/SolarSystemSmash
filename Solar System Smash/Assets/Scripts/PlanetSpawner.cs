@@ -18,9 +18,9 @@ public class PlanetSpawner : MonoBehaviour {
     private const float SCREEN_LENGTH = 18.0f;
     private const float SCREEN_HEIGHT = 5.0f;
     private const float LENGTH_TEXT_ON_SCREEN = 5.32f;
-    private bool planetSpawnDelaying = false;
+    //private bool planetSpawnDelaying = false;
     private bool planetIsMoving = false;
-    private bool planetDelayHappening = true;
+    //private bool planetDelayHappening = true;
 
     private RedPlanet zorgna;
     private GreenPlanet toklar;
@@ -34,11 +34,13 @@ public class PlanetSpawner : MonoBehaviour {
         toklar.gameObject.SetActive(false);
         svatcha = Instantiate(planetList[2], new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
         svatcha.gameObject.SetActive(false);
+        SpawnPlanet(0);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
     public void SpawnPlanet(int index)
@@ -83,7 +85,7 @@ public class PlanetSpawner : MonoBehaviour {
 
     private void SpawnGreenPlanet()
     {
-        toklar.IsActive = false;
+        //toklar.IsActive = false;
         toklar.GetComponent<Collider2D>().enabled = false;
         StartCoroutine(MoveGreenPlanetOnScreen());
         StartCoroutine(reenableGreenPlanet());
@@ -91,7 +93,7 @@ public class PlanetSpawner : MonoBehaviour {
 
     private void SpawnBluePlanet()
     {
-        svatcha.IsActive = false;
+        //svatcha.IsActive = false;
         svatcha.GetComponent<Collider2D>().enabled = false;
         StartCoroutine(MoveBluePlanetOnScreen());
         StartCoroutine(reenableBluePlanet());
@@ -115,7 +117,7 @@ public class PlanetSpawner : MonoBehaviour {
         {
             yield return null;
         }
-        toklar.IsActive = true;
+        //toklar.IsActive = true;
         toklar.GetComponent<Collider2D>().enabled = true;
     }
 
@@ -125,7 +127,7 @@ public class PlanetSpawner : MonoBehaviour {
         {
             yield return null;
         }
-        svatcha.IsActive = true;
+        //svatcha.IsActive = true;
         svatcha.GetComponent<Collider2D>().enabled = true;
     }
 
@@ -139,8 +141,8 @@ public class PlanetSpawner : MonoBehaviour {
             zorgna.transform.position += new Vector3(-0.1f, 0, 0);
             yield return new WaitForSeconds(0.01f);
         }
-        planetIsMoving = false;
         yield return new WaitForSeconds(0.5f);
+        planetIsMoving = false;
     }
 
     private IEnumerator MoveGreenPlanetOnScreen()
@@ -151,8 +153,8 @@ public class PlanetSpawner : MonoBehaviour {
             toklar.transform.position += new Vector3(-0.1f, 0, 0);
             yield return new WaitForSeconds(0.01f);
         }
-        planetIsMoving = false;
         yield return new WaitForSeconds(0.5f);
+        planetIsMoving = false;
     }
 
     private IEnumerator MoveBluePlanetOnScreen()
@@ -163,8 +165,8 @@ public class PlanetSpawner : MonoBehaviour {
             svatcha.transform.position += new Vector3(-0.1f, 0, 0);
             yield return new WaitForSeconds(0.01f);
         }
-        planetIsMoving = false;
         yield return new WaitForSeconds(0.5f);
+        planetIsMoving = false;
     }
 
 }
