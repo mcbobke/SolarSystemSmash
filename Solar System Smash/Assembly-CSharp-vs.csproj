@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\MoonPlayer.cs" />
      <Compile Include="Assets\Scripts\MusicPlayer.cs" />
      <Compile Include="Assets\Scripts\PlanetRandomMovement.cs" />
+     <Compile Include="Assets\Scripts\PlanetSpawner.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\RedPlanet.cs" />
      <Compile Include="Assets\Scripts\SoundEffectPlayer.cs" />
