@@ -192,11 +192,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 440148, guid: 36a1da1447a7dc84ca9e9f550a32ea12, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.6577239
+      value: 2.00999999
       objectReference: {fileID: 0}
     - target: {fileID: 440148, guid: 36a1da1447a7dc84ca9e9f550a32ea12, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .145089507
+      value: .00999999978
       objectReference: {fileID: 0}
     - target: {fileID: 440148, guid: 36a1da1447a7dc84ca9e9f550a32ea12, type: 2}
       propertyPath: m_LocalPosition.z
@@ -545,8 +545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dc8f82d26edd546903160551f7142d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1454679720}
   target: {fileID: 0}
+  healthBarSliderMoon: {fileID: 0}
 --- !u!58 &1454679718
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -808,6 +808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projPrefab: {fileID: 169406, guid: ef9d7c088b9e5534ea76493e469f9d5c, type: 2}
   projSpawnPoint: {fileID: 1780566280}
+  healthBarSlider: {fileID: 0}
   soundEffectPlayer: {fileID: 1997988799}
 --- !u!50 &2099493010
 Rigidbody2D:
