@@ -17,9 +17,7 @@ public class PlanetSpawner : MonoBehaviour {
     private const float SCREEN_LENGTH = 18.0f;
     private const float SCREEN_HEIGHT = 5.0f;
     private const float LENGTH_TEXT_ON_SCREEN = 5.32f;
-    //private bool planetSpawnDelaying = false;
     private bool planetIsMoving = false;
-    //private bool planetDelayHappening = true;
 
     public RedPlanet zorgna;
     public GreenPlanet toklar;
@@ -27,13 +25,13 @@ public class PlanetSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //zorgna = Instantiate(zorgna, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as RedPlanet;
-        //zorgna.gameObject.SetActive(false);
+        zorgna = Instantiate(zorgna, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as RedPlanet;
+        zorgna.gameObject.SetActive(false);
         //toklar = Instantiate(toklar, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as GreenPlanet;
         //toklar.gameObject.SetActive(false);
-        svatcha = Instantiate(svatcha, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
-        svatcha.gameObject.SetActive(false);
-        SpawnPlanet(2);
+        //svatcha = Instantiate(svatcha, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
+        //svatcha.gameObject.SetActive(false);
+        SpawnPlanet(0);
 	}
 	
 	// Update is called once per frame
@@ -83,7 +81,8 @@ public class PlanetSpawner : MonoBehaviour {
 
     private void SpawnGreenPlanet()
     {
-        //toklar.GetComponent<PlanetRandomMovement>().IsActive = false;
+        //toklar.isActive = false;
+        toklar.GetComponent<GreenPlanet>().enabled = false;
         toklar.GetComponent<Collider2D>().enabled = false;
         StartCoroutine(MoveGreenPlanetOnScreen());
         StartCoroutine(reenableGreenPlanet());
@@ -115,7 +114,8 @@ public class PlanetSpawner : MonoBehaviour {
         {
             yield return null;
         }
-        //toklar.GetComponent<PlanetRandomMovement>().IsActive = true;
+        //toklar.isActive = true;
+        toklar.GetComponent<GreenPlanet>().enabled = true;
         toklar.GetComponent<Collider2D>().enabled = true;
     }
 

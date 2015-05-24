@@ -990,7 +990,7 @@ GameObject:
   - 114: {fileID: 1211414092}
   m_Layer: 0
   m_Name: Bottom
-  m_TagString: Untagged
+  m_TagString: BottomBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1044,7 +1044,7 @@ GameObject:
   - 114: {fileID: 1263910147}
   m_Layer: 0
   m_Name: Top
-  m_TagString: Untagged
+  m_TagString: TopBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1104,7 +1104,7 @@ GameObject:
   - 114: {fileID: 1581197721}
   m_Layer: 0
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: RightBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1459,7 +1459,7 @@ GameObject:
   - 58: {fileID: 2099493008}
   m_Layer: 0
   m_Name: Sun
-  m_TagString: Untagged
+  m_TagString: Sun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

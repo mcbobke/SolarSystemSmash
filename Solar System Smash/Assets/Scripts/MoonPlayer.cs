@@ -87,7 +87,8 @@ public class MoonPlayer : MonoBehaviour {
 
 		if (greenPlanet && !immune) {
 
-			rb.AddForce((target.transform.position - transform.position) * 20 * Time.deltaTime);
+            Debug.Log("in green");
+			rb.AddForce((target.transform.position - transform.position) * 30 * Time.deltaTime);
 
 		}
 
