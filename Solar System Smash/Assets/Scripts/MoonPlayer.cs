@@ -35,6 +35,11 @@ public class MoonPlayer : MonoBehaviour {
 		}
 	}
 
+	void greenPlanetKill()
+	{
+		healthBarSliderMoon.value = 0.0f;
+	}
+
 	void applyDamage()
 	{
 		if (!immune) {
@@ -76,7 +81,7 @@ public class MoonPlayer : MonoBehaviour {
 
 			// go to game over scene
 
-			Debug.Log("Game Over");
+			Debug.Log("Moon - Game Over");
 
 		}
 
