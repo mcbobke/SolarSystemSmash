@@ -12,7 +12,6 @@ public class PlanetSpawner : MonoBehaviour {
 
     public CometSpawner cometSpawner;
     public GameObject[] messageList = new GameObject[3];
-    public GameObject[] planetList = new GameObject[3];
 
     private const float SCREEN_RIGHT = 9.0f;
     private const float SCREEN_LENGTH = 18.0f;
@@ -22,20 +21,19 @@ public class PlanetSpawner : MonoBehaviour {
     private bool planetIsMoving = false;
     //private bool planetDelayHappening = true;
 
-    private RedPlanet zorgna;
-    private GreenPlanet toklar;
-    private BluePlanet svatcha;
+    public RedPlanet zorgna;
+    public GreenPlanet toklar;
+    public BluePlanet svatcha;
 
 	// Use this for initialization
 	void Start () {
-        zorgna = Instantiate(planetList[0], new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as RedPlanet;
+        zorgna = Instantiate(zorgna, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as RedPlanet;
         zorgna.gameObject.SetActive(false);
-        toklar = Instantiate(planetList[1], new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as GreenPlanet;
+        toklar = Instantiate(toklar, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as GreenPlanet;
         toklar.gameObject.SetActive(false);
-        svatcha = Instantiate(planetList[2], new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
+        svatcha = Instantiate(svatcha, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
         svatcha.gameObject.SetActive(false);
         SpawnPlanet(0);
-
 	}
 	
 	// Update is called once per frame
