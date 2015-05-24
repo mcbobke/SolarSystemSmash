@@ -1,40 +1,50 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GreenPlanet : MonoBehaviour
-{
-    private Rigidbody2D rb;
-    private int health = 10;
+public class GreenPlanet : MonoBehaviour {
 
-    // Use this for initialization
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        GameObject.FindGameObjectWithTag("Moon").BroadcastMessage("setGreenPlanet");
-    }
+	private Rigidbody2D rb;
+	private int health = 10;
+	public static bool isActive = false;
+	private int count = 1;
+	// Use this for initialization
+	void Start () {
 
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.tag == "Moon")
-        {
-            GameObject.FindGameObjectWithTag("Moon").BroadcastMessage("greenPlanetKill");
-            col.gameObject.SetActive(false);
-        }
+		rb = GetComponent<Rigidbody2D> ();
 
-        if (col.gameObject.name == "Projectile(Clone)")
-        {
-            health--;
-        }
-    }
+	}
+	
+	void OnCollisionEnter2D(Collision2D col)		
+	{
+		if (col.gameObject.tag == "Moon") {
+			GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("greenPlanetKill");
+			col.gameObject.SetActive(false);
+			
+		}
 
-    // Update is called once per frame
-    private void Update()
-    {
-        if (health == 0)
-        {
-            Destroy(this.gameObject);
-            GameObject.FindGameObjectWithTag("Moon").BroadcastMessage("setGreenPlanet");
-        }
-        //rb.AddForce (Vector2.up * 20 * Time.deltaTime);
-    }
+		if (col.gameObject.name == "Projectile(Clone)") {
+			
+			health--;
+			
+		}
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+		if (isActive && count == 1)
+		{
+			GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage ("setGreenPlanet");
+			count++;
+		}
+
+		if(health == 0)
+		{
+			Destroy(this.gameObject);
+			GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("setGreenPlanet");
+		}
+		//rb.AddForce (Vector2.up * 20 * Time.deltaTime);
+		
+	}
+	
 }
