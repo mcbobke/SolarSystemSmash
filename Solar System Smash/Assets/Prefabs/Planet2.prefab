@@ -71,9 +71,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc96836b497a36b439d632f5f625194d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeSinceLastMovementChange: 0
-  maxTimeSinceLastAddForce: 0
-  maxMovementSpeed: 0
+  maxTimeSinceLastMovementChange: 5
+  maxTimeSinceLastAddForce: 3
+  maxMovementSpeed: 100
 --- !u!114 &11468944
 MonoBehaviour:
   m_ObjectHideFlags: 1
