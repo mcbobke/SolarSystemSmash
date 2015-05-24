@@ -7,6 +7,7 @@ public class SunPlayer : MonoBehaviour
     private Vector2 movement;
     private bool inputFlipped;
     private Vector3 mousePosition;
+    private Vector3 startPosition;
 
     public GameObject projPrefab;
     public GameObject projSpawnPoint;
@@ -17,6 +18,7 @@ public class SunPlayer : MonoBehaviour
         movement = new Vector2(0f, 5f);
         inputFlipped = false;
         mousePosition = Input.mousePosition;
+        startPosition = transform.position;
     }
 
 	public void flipInput()
@@ -55,6 +57,19 @@ public class SunPlayer : MonoBehaviour
         // Fire
         if (Input.GetMouseButtonDown(0))
             Fire(mousePosition);
+
+        // Ensure that the x position of the sun is the same as the start
+        if (transform.position.x != startPosition.x)
+            transform.position = new Vector3(startPosition.x, transform.position.y);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Comet")
+        {
+            Destroy(coll.gameObject);
+        }
     }
 
     private void Fire(Vector3 mousePosition)

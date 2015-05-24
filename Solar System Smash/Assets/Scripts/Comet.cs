@@ -4,7 +4,7 @@ using System.Collections;
 public class Comet : MonoBehaviour
 {
 	private bool nearMoon = false; 			// NISH
-	public Transform target;						// NISH
+	private Transform target;						// NISH
 	private int count = 1;							// NISH
 	private Rigidbody2D rb;							// NISH
 
@@ -22,6 +22,7 @@ public class Comet : MonoBehaviour
         spriteRender = GetComponent<SpriteRenderer>();
         int index = (int)Random.Range(1, 8);
         spriteRender.sprite = spriteList[index];
+        target = GameObject.Find("cartoon-moon").transform;
 
 		rb = GetComponent<Rigidbody2D> ();			// NISH
     }
@@ -35,7 +36,7 @@ public class Comet : MonoBehaviour
 			{
 				count++;			
 			}
-			transform.RotateAround (target.transform.position, Vector3.forward, 5);
+			transform.RotateAround (target.transform.position, Vector3.forward, 4);
 		}
     }
 
