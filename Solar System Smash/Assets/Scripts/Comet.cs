@@ -3,13 +3,18 @@ using System.Collections;
 
 public class Comet : MonoBehaviour
 {
-	public static bool nearMoon = false; 			// NISH
+	private bool nearMoon = false; 			// NISH
 	public Transform target;						// NISH
 	private int count = 1;							// NISH
 	private Rigidbody2D rb;							// NISH
 
     public SpriteRenderer spriteRender;
     public Sprite[] spriteList = new Sprite[8];
+
+	void setNearMoon()
+	{
+		nearMoon = true;
+	}
 
     // Use this for initialization
     void Start()
@@ -25,20 +30,12 @@ public class Comet : MonoBehaviour
     void Update()
     {
 		if (!nearMoon) {
-			
 		} else {
-			
 			if(count == 1)
 			{
-				//offset = transform.position - target.transform.position;
-				count++;
+				count++;			
 			}
-			
-			//rb.AddForce((target.transform.position - transform.position) * 100 * Time.deltaTime);
-			
-			//transform.position = target.transform.position + offset;
-			transform.RotateAround (target.transform.position, Vector3.forward, 1);
-			
+			transform.RotateAround (target.transform.position, Vector3.forward, 5);
 		}
     }
 
@@ -60,13 +57,8 @@ public class Comet : MonoBehaviour
             // Decrement shared player health or something
             Destroy(this.gameObject); 
         }
-        else if (other.gameObject.name == "Moon")
-        {
-            // Decrement moon health
-            Destroy(this.gameObject); 
-        }
-        else if (other.gameObject.tag != "Comet") 
-        {
+		else if (other.gameObject.tag != "Comet" && other.gameObject.tag != "Moon") 
+		{
             Destroy(this.gameObject); 
         }
     }

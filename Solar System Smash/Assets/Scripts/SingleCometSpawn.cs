@@ -2,7 +2,7 @@
 // using System;
 using System.Collections;
 
-public class CometSpawner : MonoBehaviour
+public class SingleCometSpawn : MonoBehaviour
 {
     private const float SCREEN_RIGHT = 9.0f;
     private const float SCREEN_LENGTH = 18.0f;
@@ -31,25 +31,27 @@ public class CometSpawner : MonoBehaviour
     void Start()
     {
         rand = new System.Random();
-        currentTime = Time.fixedTime;
-        nextSpawnTime = currentTime + Random.Range(spawnRateMin, spawnRateMin + spawnRateRange);
+        //currentTime = Time.fixedTime;
+        //nextSpawnTime = currentTime + Random.Range(spawnRateMin, spawnRateMin + spawnRateRange);
 
-        GenerateNewCometValues();        
+        GenerateNewCometValues();
+        FireComet();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentTime = Time.fixedTime;
+        //currentTime = Time.fixedTime;
         
-        if (currentTime >= nextSpawnTime)
-        {
-            if (turnedOn)
-            {
-                FireComet();
-            }
-            nextSpawnTime += Random.Range(spawnRateMin, spawnRateMin + spawnRateRange);
-        }
+        //if (currentTime >= nextSpawnTime)
+        //{
+        //    if (turnedOn)
+        //    {
+        //        FireComet();
+        //    }
+        //    nextSpawnTime += Random.Range(spawnRateMin, spawnRateMin + spawnRateRange);
+        //}
 
     }
 

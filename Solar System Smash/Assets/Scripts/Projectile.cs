@@ -3,12 +3,12 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour
 {
-    // Use this for initialization
-    private void Start()
+    void OnCollisionEnter2D(Collision2D coll)
     {
-    }
-
-    private void Update()
-    {
+        if (coll.gameObject.tag == "Comet")
+        {
+            Destroy(coll.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
