@@ -28,6 +28,7 @@ GameObject:
   - 212: {fileID: 21203180}
   - 58: {fileID: 5888354}
   - 50: {fileID: 5077666}
+  - 114: {fileID: 11419482}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Projectile
@@ -118,6 +119,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &11419482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0f455883a019f468509b8a05e415b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &19840448
 ParticleSystem:
   m_ObjectHideFlags: 1
