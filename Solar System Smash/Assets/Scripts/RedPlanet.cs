@@ -88,6 +88,16 @@ public class RedPlanet : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Projectile")
+        {
+            --health;
+            if (health <= 0)
+                Destroy(gameObject);
+        }
+    }
+
     private void ChangeMovement()
     {
         float moveX, moveY;
