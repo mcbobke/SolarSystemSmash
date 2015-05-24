@@ -9,14 +9,14 @@ public class MoonPlayer : MonoBehaviour {
 	private bool isControlSwitched = false;
 	private bool greenPlanet = false;
 	public Transform target;
-    public static int count;					
+    public static int cometCount = 0;					
 	
 	// Use this for initialization
 	void Start () {
 		
 		speed = 250;
 		rb = GetComponent<Rigidbody2D>();
-	    count = 0;
+	    cometCount = 0;
 	}
 	
 	/*void FixedUpdate()
@@ -83,19 +83,15 @@ public class MoonPlayer : MonoBehaviour {
 	{
 		isControlSwitched = !isControlSwitched;
 	}
-	
+
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "Comet") {
 
-		    if (count < 5)
+		    if (cometCount < 5)
 		    {
                 col.gameObject.BroadcastMessage("setNearMoon");
-		        ++count;
-		    }
-			
-			//CometScript.nearMoon = true;
-			
+			} 
 		}
 	}
-	
+
 }
