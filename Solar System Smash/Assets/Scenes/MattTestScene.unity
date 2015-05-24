@@ -180,6 +180,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11415802, guid: 36a1da1447a7dc84ca9e9f550a32ea12, type: 2}
+      propertyPath: moon
+      value: 
+      objectReference: {fileID: 1454679716}
+    - target: {fileID: 5072732, guid: 36a1da1447a7dc84ca9e9f550a32ea12, type: 2}
+      propertyPath: m_FixedAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415802, guid: 36a1da1447a7dc84ca9e9f550a32ea12, type: 2}
+      propertyPath: movementSpeed
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36a1da1447a7dc84ca9e9f550a32ea12, type: 2}
   m_IsPrefabParent: 0
