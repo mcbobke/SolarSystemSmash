@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 public class SunPlayer : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -11,6 +11,7 @@ public class SunPlayer : MonoBehaviour
 
     public GameObject projPrefab;
     public GameObject projSpawnPoint;
+    public Slider healthBarSlider;  //health bar slider reference
 
     public SoundEffectPlayer soundEffectPlayer;
 
@@ -67,10 +68,16 @@ public class SunPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Comet")
+        if (coll.gameObject.tag == "Comet" && healthBarSlider.value > 0)
         {
             Destroy(coll.gameObject);
+            healthBarSlider.value -= .011f;  //reduce health
         }
+      //  elseif() // for alleged game over screen 
+    //    {
+
+     //   }
+
     }
 
     private void Fire(Vector3 mousePosition)
