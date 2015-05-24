@@ -29,11 +29,11 @@ public class PlanetSpawner : MonoBehaviour {
 	void Start () {
         zorgna = Instantiate(zorgna, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as RedPlanet;
         zorgna.gameObject.SetActive(false);
-        toklar = Instantiate(toklar, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as GreenPlanet;
-        toklar.gameObject.SetActive(false);
+        //toklar = Instantiate(toklar, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as GreenPlanet;
+        //toklar.gameObject.SetActive(false);
         svatcha = Instantiate(svatcha, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
         svatcha.gameObject.SetActive(false);
-        SpawnPlanet(0);
+        SpawnPlanet(2);
 	}
 	
 	// Update is called once per frame
@@ -56,6 +56,7 @@ public class PlanetSpawner : MonoBehaviour {
                 break;
         }
         GameObject message = Instantiate(messageList[index], new Vector3(SCREEN_RIGHT + 2.76f, -9.0f, 1), new Quaternion(0, 0, 0, 0)) as GameObject;
+        
         cometSpawner.TurnSpawningOff();
         //StartCoroutine(DelayPlanetMove());
         switch (index)
@@ -137,7 +138,7 @@ public class PlanetSpawner : MonoBehaviour {
         while (zorgna.transform.position.x > 2.0f)
         {
             zorgna.transform.position += new Vector3(-0.1f, 0, 0);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.03f);
         }
         yield return new WaitForSeconds(0.5f);
         planetIsMoving = false;
@@ -149,7 +150,7 @@ public class PlanetSpawner : MonoBehaviour {
         while (toklar.transform.position.x > 2.0f)
         {
             toklar.transform.position += new Vector3(-0.1f, 0, 0);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.03f);
         }
         yield return new WaitForSeconds(0.5f);
         planetIsMoving = false;
@@ -161,7 +162,7 @@ public class PlanetSpawner : MonoBehaviour {
         while (svatcha.transform.position.x > 2.0f)
         {
             svatcha.transform.position += new Vector3(-0.1f, 0, 0);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.03f);
         }
         yield return new WaitForSeconds(0.5f);
         planetIsMoving = false;

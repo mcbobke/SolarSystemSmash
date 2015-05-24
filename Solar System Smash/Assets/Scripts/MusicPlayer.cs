@@ -12,9 +12,9 @@ using System.Collections.Generic;
 public class MusicPlayer : MonoBehaviour {
 
     public float bgmStartDelayInSeconds = 0.0f;
-    public float tempo;
-    public int numBeatsPerClip;
-    public float volume = 0.8f;
+    public float tempo = 128.0f;
+    public int numBeatsPerClip = 64;
+    public float volume = 0.7f;
     public AudioClip[] clipList = new AudioClip[5];  // You can change the size of this list in the Unity editor
 
     private int index;
@@ -45,7 +45,7 @@ public class MusicPlayer : MonoBehaviour {
 
         if (time + 1.0f > nextEventTime)
         {
-            Debug.Log("Playing clip of index " + index);
+            // Debug.Log("Playing clip of index " + index);
             audioSources[flip].clip = clipList[index];
             audioSources[flip].PlayScheduled(nextEventTime);
 
