@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11413958}
   m_Layer: 0
   m_Name: Planet1Projectile
-  m_TagString: Projectile
+  m_TagString: Planet1Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -9,14 +9,18 @@ public class MoonPlayer : MonoBehaviour {
 	private bool isControlSwitched = false;
 	private bool greenPlanet = false;
 	public Transform target;
-    public static int count;					
-	
+    public static int cometCount = 0;					
+
+	private Texture2D sprintBar;
+	private GUIStyle style;
+
 	// Use this for initialization
 	void Start () {
-		
+		sprintBar = new Texture2D(5, 3);
+		style = new GUIStyle();
 		speed = 250;
 		rb = GetComponent<Rigidbody2D>();
-	    count = 0;
+	    cometCount = 0;
 	}
 	
 	/*void FixedUpdate()
@@ -83,19 +87,33 @@ public class MoonPlayer : MonoBehaviour {
 	{
 		isControlSwitched = !isControlSwitched;
 	}
-	
+
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "Comet") {
 
-		    if (count < 5)
+		    if (cometCount < 5)
 		    {
                 col.gameObject.BroadcastMessage("setNearMoon");
-		        ++count;
-		    }
-			
-			//CometScript.nearMoon = true;
-			
+			} 
 		}
 	}
-	
+
+
+
+	/*void OnGUI() {
+		
+		sprintBar.SetPixel(0, 0, Color.red);
+		sprintBar.Apply();
+		style.normal.background = sprintBar;
+		GUI.Box(new Rect(0, Screen.height - 25, Screen.width * (1 - 3 / 3), 25), GUIContent.none, style);
+
+		GUI.skin.label.fontSize = 30;
+		GUIStyle s = GUI.skin.GetStyle("Label");
+		s.normal.textColor = Color.white;
+		s.fontStyle = FontStyle.Bold;
+		s.alignment = TextAnchor.UpperLeft;
+		
+		
+	}*/
+
 }

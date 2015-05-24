@@ -5,15 +5,30 @@ public class Comet : MonoBehaviour
 {
 	private bool nearMoon = false; 			// NISH
 	private Transform target;						// NISH
-	private int count = 1;							// NISH
 	private Rigidbody2D rb;							// NISH
+	private int count = 1;	
+	private Vector3 offset;
 
     public SpriteRenderer spriteRender;
     public Sprite[] spriteList = new Sprite[8];
 
 	void setNearMoon()
 	{
-		nearMoon = true;
+		if (!nearMoon) {
+			nearMoon = true;
+			MoonPlayer.cometCount++;
+			transform.parent = GameObject.FindGameObjectWithTag("Moon").transform;
+		}
+	}
+
+	void resetComet()
+	{
+		transform.position += offset;
+	}
+
+	void ignoreCollisions()
+	{
+		Physics2D.IgnoreCollision(GameObject.FindGameObjectWithTag ("Moon").GetComponent<Collider2D>(),GetComponent<Collider2D>(),true);
 	}
 
     // Use this for initialization
@@ -30,13 +45,37 @@ public class Comet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (!nearMoon) {
-		} else {
-			if(count == 1)
+		if (nearMoon) {
+
+			/*if(count == 1)
 			{
-				count++;			
+				offset = transform.position - target.transform.position;
+				count++;
+			}*/
+		
+			if((transform.parent.position-transform.position).sqrMagnitude > rotateScript.offset.sqrMagnitude + 1)
+			{
+				Debug.Log ("hey");
+				rb.AddForce((transform.parent.position - transform.position) * 30 * Time.deltaTime); // NOT REALLY NECESSARY
+				//transform.position = target.transform.position + offset;
+			}
+			
+			transform.RotateAround (transform.parent.position, Vector3.forward, 4);
+
+
+			/*if(count == 1)
+			{
+				offset = transform.position - target.transform.position;
+				count++;
+			}
+
+			if((transform.position-target.transform.position).sqrMagnitude > offset.sqrMagnitude + 4)
+			{
+				rb.AddForce((target.transform.position - transform.position) * 30 * Time.deltaTime); // NOT REALLY NECESSARY
+				//transform.position = target.transform.position + offset;
 			}
 			transform.RotateAround (target.transform.position, Vector3.forward, 4);
+			*/
 		}
     }
 
