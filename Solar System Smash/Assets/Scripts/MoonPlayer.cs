@@ -8,7 +8,8 @@ public class MoonPlayer : MonoBehaviour {
 	private float speed;
 	private bool isControlSwitched = false;
 	private bool greenPlanet = false;
-	public Transform target;						
+	public Transform target;
+	private static int countOfComets = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -84,11 +85,12 @@ public class MoonPlayer : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "Comet") {
+			if(countOfComets <= 5)
+			{
+				col.gameObject.BroadcastMessage("setNearMoon");
+				countOfComets ++;
+			}
 
-			col.gameObject.BroadcastMessage("setNearMoon");
-			
-			//CometScript.nearMoon = true;
-			
 		}
 	}
 	
