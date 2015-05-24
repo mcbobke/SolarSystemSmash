@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\CometSpawner.cs" />
      <Compile Include="Assets\Scripts\ExitButton.cs" />
      <Compile Include="Assets\Scripts\GreenPlanet.cs" />
+     <Compile Include="Assets\Scripts\HowtoPlay.cs" />
      <Compile Include="Assets\Scripts\MenuMoon.cs" />
      <Compile Include="Assets\Scripts\MenuSun.cs" />
      <Compile Include="Assets\Scripts\MoonPlayer.cs" />
