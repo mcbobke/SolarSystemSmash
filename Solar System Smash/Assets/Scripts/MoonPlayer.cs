@@ -11,7 +11,6 @@ public class MoonPlayer : MonoBehaviour {
 	private bool greenPlanet = false;
 	public Transform target;
     public static int cometCount = 0;	
-	private int health = 5;
 	private Vector3 healthPos;
 	private bool immune = false;
 	private float timer;
@@ -32,14 +31,14 @@ public class MoonPlayer : MonoBehaviour {
 	{
 		if(healthBarSliderMoon.value > 0 && healthBarSliderMoon.value < healthBarSliderMoon.maxValue)
 		{
-			healthBarSliderMoon.value += 0.011f;
+			healthBarSliderMoon.value += 0.2f;
 		}
 	}
 
 	void applyDamage()
 	{
 		if (!immune) {
-			healthBarSliderMoon.value -= 0.011f;
+			healthBarSliderMoon.value -= 0.2f;
 		}
 	}
 	
@@ -73,9 +72,11 @@ public class MoonPlayer : MonoBehaviour {
 
 		}
 
-		if (health == 0) {
+		if (healthBarSliderMoon.value <= 0) {
 
+			// go to game over scene
 
+			Debug.Log("Game Over");
 
 		}
 
@@ -143,9 +144,9 @@ public class MoonPlayer : MonoBehaviour {
 			} 
 		}
 
-		if (col.gameObject.tag == "Projectile(clone)" && healthBarSliderMoon.value > 0) {
+		if (col.gameObject.name == "Projectile(Clone)" && healthBarSliderMoon.value > 0) {
 
-			healthBarSliderMoon.value -= 0.011f;
+			applyDamage();
 
 		}
 	}

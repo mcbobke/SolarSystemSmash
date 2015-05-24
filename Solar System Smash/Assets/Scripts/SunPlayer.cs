@@ -24,6 +24,14 @@ public class SunPlayer : MonoBehaviour
         startPosition = transform.position;
     }
 
+	private void gainHealthSun()
+	{
+		if(healthBarSlider.value > 0 && healthBarSlider.value < healthBarSlider.maxValue)
+		{
+			healthBarSlider.value += 0.2f;
+		}
+	}
+
     public void flipInput()
     {
         inputFlipped = !inputFlipped;
