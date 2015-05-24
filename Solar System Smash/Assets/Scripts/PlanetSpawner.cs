@@ -27,8 +27,8 @@ public class PlanetSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        zorgna = Instantiate(zorgna, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as RedPlanet;
-        zorgna.gameObject.SetActive(false);
+        //zorgna = Instantiate(zorgna, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as RedPlanet;
+        //zorgna.gameObject.SetActive(false);
         //toklar = Instantiate(toklar, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as GreenPlanet;
         //toklar.gameObject.SetActive(false);
         svatcha = Instantiate(svatcha, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
@@ -58,7 +58,6 @@ public class PlanetSpawner : MonoBehaviour {
         GameObject message = Instantiate(messageList[index], new Vector3(SCREEN_RIGHT + 2.76f, -9.0f, 1), new Quaternion(0, 0, 0, 0)) as GameObject;
         
         cometSpawner.TurnSpawningOff();
-        //StartCoroutine(DelayPlanetMove());
         switch (index)
         {
             case 0:
@@ -84,7 +83,7 @@ public class PlanetSpawner : MonoBehaviour {
 
     private void SpawnGreenPlanet()
     {
-        //toklar.IsActive = false;
+        //toklar.GetComponent<PlanetRandomMovement>().IsActive = false;
         toklar.GetComponent<Collider2D>().enabled = false;
         StartCoroutine(MoveGreenPlanetOnScreen());
         StartCoroutine(reenableGreenPlanet());
@@ -92,7 +91,7 @@ public class PlanetSpawner : MonoBehaviour {
 
     private void SpawnBluePlanet()
     {
-        //svatcha.IsActive = false;
+        svatcha.GetComponent<PlanetRandomMovement>().IsActive = false;
         svatcha.GetComponent<Collider2D>().enabled = false;
         StartCoroutine(MoveBluePlanetOnScreen());
         StartCoroutine(reenableBluePlanet());
@@ -110,23 +109,23 @@ public class PlanetSpawner : MonoBehaviour {
         zorgna.GetComponent<Collider2D>().enabled = true;
     }
 
-    private IEnumerator reenableBluePlanet()
-    {
-        while (planetIsMoving)
-        {
-            yield return null;
-        }
-        //toklar.IsActive = true;
-        toklar.GetComponent<Collider2D>().enabled = true;
-    }
-
     private IEnumerator reenableGreenPlanet()
     {
         while (planetIsMoving)
         {
             yield return null;
         }
-        //svatcha.IsActive = true;
+        //toklar.GetComponent<PlanetRandomMovement>().IsActive = true;
+        toklar.GetComponent<Collider2D>().enabled = true;
+    }
+
+    private IEnumerator reenableBluePlanet()
+    {
+        while (planetIsMoving)
+        {
+            yield return null;
+        }
+        svatcha.GetComponent<PlanetRandomMovement>().IsActive = true;
         svatcha.GetComponent<Collider2D>().enabled = true;
     }
 
