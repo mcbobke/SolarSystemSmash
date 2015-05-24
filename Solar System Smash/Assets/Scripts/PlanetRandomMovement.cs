@@ -7,6 +7,7 @@ public class PlanetRandomMovement : MonoBehaviour
     private float timeSinceLastAddForce;
     private Rigidbody2D rb;
     private Vector2 movement;
+    private bool isActive;
 
     public float maxTimeSinceLastMovementChange;
     public float maxTimeSinceLastAddForce;
@@ -17,6 +18,7 @@ public class PlanetRandomMovement : MonoBehaviour
         timeSinceLastMovementChange = 0f;
         timeSinceLastAddForce = 0f;
         rb = GetComponent<Rigidbody2D>();
+        isActive = false;
 
         float moveX, moveY;
 
@@ -34,39 +36,42 @@ public class PlanetRandomMovement : MonoBehaviour
 
     private void Update()
     {
-        timeSinceLastMovementChange += Time.deltaTime;
-        timeSinceLastAddForce += Time.deltaTime;
-
-        if (timeSinceLastMovementChange >= maxTimeSinceLastMovementChange)
+        if (isActive)
         {
-            ChangeMovement();
-            timeSinceLastMovementChange = 0f;
-            timeSinceLastAddForce = 0f;
+            timeSinceLastMovementChange += Time.deltaTime;
+            timeSinceLastAddForce += Time.deltaTime;
 
-            rb.velocity = new Vector2(0f, 0f);
-            rb.AddForce(movement);
-        }
+            if (timeSinceLastMovementChange >= maxTimeSinceLastMovementChange)
+            {
+                ChangeMovement();
+                timeSinceLastMovementChange = 0f;
+                timeSinceLastAddForce = 0f;
 
-        else if (timeSinceLastAddForce >= maxTimeSinceLastAddForce)
-        {
-            timeSinceLastAddForce = 0f;
-            rb.AddForce(movement);
-        }
+                rb.velocity = new Vector2(0f, 0f);
+                rb.AddForce(movement);
+            }
 
-        if ((transform.position.x <= -5f && movement.x < 0) || (transform.position.x >= 8f && movement.x > 0))
-        {
-            rb.velocity = new Vector2(-rb.velocity.x, rb.velocity.y);
-            movement = new Vector2(-movement.x, movement.y);
-            timeSinceLastAddForce = 0f;
-            timeSinceLastMovementChange = 0f;
-        }
+            else if (timeSinceLastAddForce >= maxTimeSinceLastAddForce)
+            {
+                timeSinceLastAddForce = 0f;
+                rb.AddForce(movement);
+            }
 
-        if ((transform.position.y >= 4f && movement.y > 0) || (transform.position.y <= -4f && movement.y < 0))
-        {
-            rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y);
-            movement = new Vector2(movement.x, -movement.y);
-            timeSinceLastAddForce = 0f;
-            timeSinceLastMovementChange = 0f;
+            if ((transform.position.x <= -5f && movement.x < 0) || (transform.position.x >= 8f && movement.x > 0))
+            {
+                rb.velocity = new Vector2(-rb.velocity.x, rb.velocity.y);
+                movement = new Vector2(-movement.x, movement.y);
+                timeSinceLastAddForce = 0f;
+                timeSinceLastMovementChange = 0f;
+            }
+
+            if ((transform.position.y >= 4f && movement.y > 0) || (transform.position.y <= -4f && movement.y < 0))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y);
+                movement = new Vector2(movement.x, -movement.y);
+                timeSinceLastAddForce = 0f;
+                timeSinceLastMovementChange = 0f;
+            }
         }
     }
 
@@ -81,5 +86,11 @@ public class PlanetRandomMovement : MonoBehaviour
         } while (moveX < 75 && moveY < 75);
 
         movement = new Vector2(moveX, moveY);
+    }
+
+    public bool IsActive
+    {
+        get { return isActive; }
+        set { isActive = value; }
     }
 }
