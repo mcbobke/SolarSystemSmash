@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class SoundEffectManager : MonoBehaviour {
+public class SoundEffectPlayer : MonoBehaviour {
 
     public AudioSource audioSource;
     public AudioSource loopingAudioSource;
@@ -19,12 +19,12 @@ public class SoundEffectManager : MonoBehaviour {
         }
 	}
 
-    public void PlaySoundEffect(string name, float volume)
+    public void PlaySoundEffect(string name, float volume = 0.8f)
     {
         audioSource.PlayOneShot(clipDict[name], volume);
     }
 
-    public void PlaySoundEffectLoop(string name, float volume)
+    public void PlaySoundEffectLoop(string name, float volume = 0.8f)
     {
         loopingAudioSource.clip = clipDict[name];
         loopingAudioSource.Play();
