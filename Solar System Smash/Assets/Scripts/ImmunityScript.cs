@@ -17,6 +17,7 @@ public class ImmunityScript : MonoBehaviour {
 		if (col.gameObject.tag == "Moon") {
 			
 			col.gameObject.BroadcastMessage("setImmune");
+			GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("setImmuneSun");
 			Destroy(this.gameObject);
 
 		}

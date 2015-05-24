@@ -91,7 +91,7 @@ public class Comet : MonoBehaviour
             // Decrement shared player health or something
             Destroy(this.gameObject); 
         }
-		else if (other.gameObject.tag != "Comet" && other.gameObject.tag != "Moon") 
+		else if (other.gameObject.tag != "Comet" && other.gameObject.tag != "Moon" && other.gameObject.tag != "Planet") 
 		{
             Destroy(this.gameObject); 
         }

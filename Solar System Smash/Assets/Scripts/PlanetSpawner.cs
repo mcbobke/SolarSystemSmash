@@ -5,9 +5,9 @@ using System.Collections.Generic;
 public class PlanetSpawner : MonoBehaviour {
 
     /* In each list, the indexes correspond to these planets:
-     * 0 is Zorgna
-     * 1 is Toklar
-     * 2 is S'vatcha
+     * 0 is Zorgna, Red
+     * 1 is Toklar, Green
+     * 2 is S'vatcha, Blue
      */
 
     public CometSpawner cometSpawner;
@@ -18,16 +18,29 @@ public class PlanetSpawner : MonoBehaviour {
     private const float SCREEN_LENGTH = 18.0f;
     private const float SCREEN_HEIGHT = 5.0f;
     private const float LENGTH_TEXT_ON_SCREEN = 5.32f;
-    private bool planetSpawnDelaying = false;
+    //private bool planetSpawnDelaying = false;
+    private bool planetIsMoving = false;
+    //private bool planetDelayHappening = true;
+
+    private RedPlanet zorgna;
+    private GreenPlanet toklar;
+    private BluePlanet svatcha;
 
 	// Use this for initialization
 	void Start () {
-	    
+        zorgna = Instantiate(planetList[0], new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as RedPlanet;
+        zorgna.gameObject.SetActive(false);
+        toklar = Instantiate(planetList[1], new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as GreenPlanet;
+        toklar.gameObject.SetActive(false);
+        svatcha = Instantiate(planetList[2], new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
+        svatcha.gameObject.SetActive(false);
+        SpawnPlanet(0);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
     public void SpawnPlanet(int index)
@@ -35,58 +48,125 @@ public class PlanetSpawner : MonoBehaviour {
         switch (index)
         {
             case 0:
-                RedPlanet zorgna = Instantiate(planetList[index], new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as RedPlanet;
+                zorgna.gameObject.SetActive(true);
                 break;
             case 1:
-                GreenPlanet toklar = Instantiate(planetList[index], new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as GreenPlanet;
+                toklar.gameObject.SetActive(true);
                 break;
             case 2:
-                BluePlanet svatcha = Instantiate(planetList[index], new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
+                svatcha.gameObject.SetActive(true);
                 break;
         }
-        GameObject message = Instantiate(messageList[index], new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as GameObject;
+        GameObject message = Instantiate(messageList[index], new Vector3(SCREEN_RIGHT + 2.76f, -9.0f, 1), new Quaternion(0, 0, 0, 0)) as GameObject;
         cometSpawner.TurnSpawningOff();
-        StartCoroutine(DelayPlanetMove());
+        //StartCoroutine(DelayPlanetMove());
         switch (index)
         {
             case 0:
-                StartCoroutine(MoveRedPlanetOnScreen());
+                SpawnRedPlanet();
                 break;
             case 1:
-                StartCoroutine(MoveGreenPlanetOnScreen());
+                SpawnGreenPlanet();
                 break;
             case 2:
-                StartCoroutine(MoveBluePlanetOnScreen());
+                SpawnBluePlanet();
                 break;
         }
 
     }
 
-    private IEnumerator DelayPlanetMove()
+    private void SpawnRedPlanet()
     {
-        planetSpawnDelaying = true;
-        yield return new WaitForSeconds(LENGTH_TEXT_ON_SCREEN);
-        planetSpawnDelaying = false;
-        
+        zorgna.IsActive = false;
+        zorgna.GetComponent<Collider2D>().enabled = false;
+        StartCoroutine(MoveRedPlanetOnScreen());
+        StartCoroutine(reenableRedPlanet());
     }
 
-    private IEnumerator MoveRedPlanetOnScreen()
+    private void SpawnGreenPlanet()
     {
-        while (planetSpawnDelaying)
+        //toklar.IsActive = false;
+        toklar.GetComponent<Collider2D>().enabled = false;
+        StartCoroutine(MoveGreenPlanetOnScreen());
+        StartCoroutine(reenableGreenPlanet());
+    }
+
+    private void SpawnBluePlanet()
+    {
+        //svatcha.IsActive = false;
+        svatcha.GetComponent<Collider2D>().enabled = false;
+        StartCoroutine(MoveBluePlanetOnScreen());
+        StartCoroutine(reenableBluePlanet());
+    }
+
+    /*-----------------------------------------------------*/
+
+    private IEnumerator reenableRedPlanet()
+    {
+        while (planetIsMoving)
         {
             yield return null;
         }
-        // TODO
+        zorgna.IsActive = true;
+        zorgna.GetComponent<Collider2D>().enabled = true;
     }
 
-    private IEnumerator MoveBluePlanetOnScreen()
+    private IEnumerator reenableBluePlanet()
     {
-        throw new System.NotImplementedException();
+        while (planetIsMoving)
+        {
+            yield return null;
+        }
+        //toklar.IsActive = true;
+        toklar.GetComponent<Collider2D>().enabled = true;
+    }
+
+    private IEnumerator reenableGreenPlanet()
+    {
+        while (planetIsMoving)
+        {
+            yield return null;
+        }
+        //svatcha.IsActive = true;
+        svatcha.GetComponent<Collider2D>().enabled = true;
+    }
+
+    /*-----------------------------------------------------*/
+
+    private IEnumerator MoveRedPlanetOnScreen()
+    {
+        planetIsMoving = true;
+        while (zorgna.transform.position.x > 2.0f)
+        {
+            zorgna.transform.position += new Vector3(-0.1f, 0, 0);
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return new WaitForSeconds(0.5f);
+        planetIsMoving = false;
     }
 
     private IEnumerator MoveGreenPlanetOnScreen()
     {
-        throw new System.NotImplementedException();
+        planetIsMoving = true;
+        while (toklar.transform.position.x > 2.0f)
+        {
+            toklar.transform.position += new Vector3(-0.1f, 0, 0);
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return new WaitForSeconds(0.5f);
+        planetIsMoving = false;
+    }
+
+    private IEnumerator MoveBluePlanetOnScreen()
+    {
+        planetIsMoving = true;
+        while (svatcha.transform.position.x > 2.0f)
+        {
+            svatcha.transform.position += new Vector3(-0.1f, 0, 0);
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return new WaitForSeconds(0.5f);
+        planetIsMoving = false;
     }
 
 }

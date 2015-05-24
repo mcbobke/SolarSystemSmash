@@ -3,31 +3,40 @@ using System.Collections;
 
 public class BluePlanet : MonoBehaviour {
 
+	private int health = 10;
+
 	// Use this for initialization
 	void Start () {
 		GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("switchControls");
-		//GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("flipInput");
+		GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("flipInput");
 
 	}
 
-	void OnDestroy()
+	void reduceHealth()
 	{
-		GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("switchControls");
-		//GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("flipInput");
-		gameObject.SetActive (false);
-
+		health -= 1;
 	}
-
-	void OnCollisionEnter2D(Collision2D col)		// SHOULD BE REMOVED AND CALL ONDESTROY WHEN IT IS ACTUALLY DESTROYED
-	{
-		if (col.gameObject.tag == "Comet") {
-			OnDestroy();
-
-		}
-	}
-
+	
 	// Update is called once per frame
 	void Update () {
+
+		if(health == 0)
+		{
+			Destroy(this.gameObject);
+			GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("switchControls");
+			GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("flipInput");
+
+		}
 	
+	}
+
+	void OnCollisionEnter2D(Collision2D col)		
+	{
+
+		if (col.gameObject.name == "Projectile(Clone)") {
+			
+			health--;
+			
+		}
 	}
 }

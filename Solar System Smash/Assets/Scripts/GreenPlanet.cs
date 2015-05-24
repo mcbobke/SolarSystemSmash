@@ -4,32 +4,26 @@ using System.Collections;
 public class GreenPlanet : MonoBehaviour {
 
 	private Rigidbody2D rb;
+	private int health = 10;
+
 	// Use this for initialization
 	void Start () {
 
 		rb = GetComponent<Rigidbody2D> ();
-
 		GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("setGreenPlanet");
-		//GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("flipInput");
-		
 	}
 	
-	void OnDestroy()
+	void OnCollisionEnter2D(Collision2D col)		
 	{
-		GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("setGreenPlanet");
-		//GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("flipInput");
-		gameObject.SetActive (false);
-		
-	}
-	
-	void OnCollisionEnter2D(Collision2D col)		// SHOULD BE REMOVED AND CALL ONDESTROY WHEN IT IS ACTUALLY DESTROYED
-	{
-		if (col.gameObject.tag == "Comet") {
-			OnDestroy();
+		if (col.gameObject.tag == "Moon") {
+			GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("greenPlanetKill");
+			col.gameObject.SetActive(false);
 			
 		}
-		if (col.gameObject.tag == "Moon") {
-			col.gameObject.SetActive(false);
+
+		if (col.gameObject.name == "Projectile(Clone)") {
+			
+			health--;
 			
 		}
 	}
@@ -37,7 +31,13 @@ public class GreenPlanet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if(health == 0)
+		{
+			Destroy(this.gameObject);
+			GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("setGreenPlanet");
+		}
 		//rb.AddForce (Vector2.up * 20 * Time.deltaTime);
 		
 	}
+	
 }
