@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class SoundEffectManager : MonoBehaviour {
@@ -31,27 +30,9 @@ public class SoundEffectManager : MonoBehaviour {
         loopingAudioSource.Play();
     }
 
-    //TODO: fix this
-    public void StopLoopingPlayback()
-    {
-        StartCoroutine("FadeOutLoopingEffect");
-    }
-
-    public IEnumerable AudioSourceStopWrapper()
+    public void StopSoundEffectLoop()
     {
         loopingAudioSource.Stop();
-        loopingAudioSource.volume = 1.0f;
-        yield return null;
     }
 
-    public IEnumerable FadeOutLoopingEffect()
-    {
-        while (loopingAudioSource.volume > 0.0f)
-        {
-            loopingAudioSource.volume -= 0.1f;
-            yield return new WaitForSeconds(0.01f);
-        }
-        loopingAudioSource.Stop();
-        loopingAudioSource.volume = 1.0f;
-    }
 }
