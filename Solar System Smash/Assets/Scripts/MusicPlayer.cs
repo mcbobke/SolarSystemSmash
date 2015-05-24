@@ -14,6 +14,7 @@ public class MusicPlayer : MonoBehaviour {
     public float bgmStartDelayInSeconds = 0.0f;
     public float tempo;
     public int numBeatsPerClip;
+    public float volume = 0.8f;
     public AudioClip[] clipList = new AudioClip[5];  // You can change the size of this list in the Unity editor
 
     private int index;
@@ -29,6 +30,7 @@ public class MusicPlayer : MonoBehaviour {
             GameObject child = new GameObject("BgmPlayerChild");
             child.transform.parent = gameObject.transform;
             audioSources[i] = child.AddComponent<AudioSource>() as AudioSource;
+            audioSources[i].volume = volume;
         }
 
         index = 0; 

@@ -702,6 +702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projPrefab: {fileID: 169406, guid: ef9d7c088b9e5534ea76493e469f9d5c, type: 2}
   projSpawnPoint: {fileID: 1780566280}
+  soundEffectPlayer: {fileID: 0}
 --- !u!50 &2099493010
 Rigidbody2D:
   m_ObjectHideFlags: 0
