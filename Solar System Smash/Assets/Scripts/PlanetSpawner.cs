@@ -84,6 +84,7 @@ public class PlanetSpawner : MonoBehaviour {
     private void SpawnGreenPlanet()
     {
         GreenPlanet.isActive = false;
+        toklar.GetComponent<PlanetRandomMovement>().IsActive = false;
         toklar.GetComponent<Collider2D>().enabled = false;
         StartCoroutine(MoveGreenPlanetOnScreen());
         StartCoroutine(reenableGreenPlanet());

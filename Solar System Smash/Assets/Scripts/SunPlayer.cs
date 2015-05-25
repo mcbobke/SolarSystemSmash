@@ -135,6 +135,6 @@ public class SunPlayer : MonoBehaviour
         Quaternion projRotation = transform.rotation;
         GameObject proj = (GameObject) Instantiate(projPrefab, projSpawnPoint.transform.position, projRotation);
         proj.GetComponent<Rigidbody2D>().AddForce(proj.transform.up*500f);
-        //soundEffectPlayer.PlaySoundEffect("sun_shoot", 0.5f);
+        soundEffectPlayer.PlaySoundEffect("sun_shoot", 0.5f);
     }
 }
