@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cad5bda2e651bd4e9ff03a379f4059c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeSinceLastFire: 3
+  maxTimeSinceLastFire: 1.5
   health: 10
   projPrefab: {fileID: 133310, guid: 77fc0f2d646ca034d8edf92acb7b7a79, type: 2}
   projSpawnPoint: {fileID: 114054}
