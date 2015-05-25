@@ -40,6 +40,7 @@ public class GreenPlanet : MonoBehaviour {
 
 		if(health == 0)
 		{
+            //GameObject.Find("GameManager").
 			Destroy(this.gameObject);
 			GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("setGreenPlanet");
 		}

@@ -53,7 +53,10 @@ public class RedPlanet : MonoBehaviour
             {
                 --health;
                 if (health <= 0)
+                {
+                    //GameObject.Find("GameManager").
                     Destroy(gameObject);
+                }
             }  
         }
     }
