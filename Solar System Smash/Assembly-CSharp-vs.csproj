@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\StartButton.cs" />
      <Compile Include="Assets\Scripts\SunPlayer.cs" />
      <Compile Include="Assets\Scripts\ToMainMenu.cs" />
+     <Compile Include="Assets\Scripts\WinLosetomenu.cs" />
      <Compile Include="Assets\Scripts\gainHealthScript.cs" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
