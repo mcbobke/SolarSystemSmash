@@ -53,15 +53,6 @@ public class MoonPlayer : MonoBehaviour {
 			healthBarSliderMoon.value -= 0.2f;
 		}
 	}
-	
-	/*void FixedUpdate()
-	{
-		speed = 10;
-		
-		// Moves and stops
-		rb.velocity = new Vector2 (Mathf.Lerp (0, Input.GetAxis ("Horizontal") * speed, 0.8f),
-		                                   Mathf.Lerp (0, Input.GetAxis ("Vertical") * speed, 0.8f));
-	}*/
 
 	void setImmune()
 	{
@@ -94,7 +85,7 @@ public class MoonPlayer : MonoBehaviour {
 
 		if (greenPlanet && !immune) {
 
-			rb.AddForce((target.transform.position - transform.position) * 20 * Time.deltaTime);
+			rb.AddForce((target.transform.position - transform.position) * 40 * Time.deltaTime);
 
 		}
 
@@ -163,21 +154,4 @@ public class MoonPlayer : MonoBehaviour {
             Destroy(col.gameObject);
 		}
 	}
-
-	/*void OnGUI() {
-		
-		sprintBar.SetPixel(0, 0, Color.red);
-		sprintBar.Apply();
-		style.normal.background = sprintBar;
-		GUI.Box(new Rect(0, Screen.height - 25, Screen.width * (1 - 3 / 3), 25), GUIContent.none, style);
-
-		GUI.skin.label.fontSize = 30;
-		GUIStyle s = GUI.skin.GetStyle("Label");
-		s.normal.textColor = Color.white;
-		s.fontStyle = FontStyle.Bold;
-		s.alignment = TextAnchor.UpperLeft;
-		
-		
-	}*/
-
 }
