@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
             planet0Spawned = true;
         }
             
-        else if (numCometsDestroyed == 2 && !planet1Spawned)
+        else if (numCometsDestroyed == 200 && !planet1Spawned)
         {
             SpawnPlanet(1);
             planet1Spawned = true;

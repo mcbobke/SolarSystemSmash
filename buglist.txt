@@ -1,4 +1,10 @@
-Random movement of blue planet stops
 
-Moon stops attracting comets at some point
 
+Moon and planets get pushed by projectiles but shouldn't 
+
+
+Include win scene and lose scene in build settings
+
+
+Todo:
+increase projectile collider to make it easier to hit comets

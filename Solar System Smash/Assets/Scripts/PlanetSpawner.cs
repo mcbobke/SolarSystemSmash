@@ -29,7 +29,7 @@ public class PlanetSpawner : MonoBehaviour {
         zorgna = Instantiate(zorgna, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as RedPlanet;
         zorgna.gameObject.SetActive(false);
         toklar.gameObject.SetActive(false);
-        svatcha = Instantiate(svatcha, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
+        //svatcha = Instantiate(svatcha, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
         svatcha.gameObject.SetActive(false);
 	}
 
@@ -74,7 +74,6 @@ public class PlanetSpawner : MonoBehaviour {
 
     private void SpawnGreenPlanet()
     {
-        toklar.GetComponent<PlanetRandomMovement>().enabled = false;
         GreenPlanet.isActive = false;
         toklar.GetComponent<Collider2D>().enabled = false;
         StartCoroutine(MoveGreenPlanetOnScreen());
@@ -83,8 +82,8 @@ public class PlanetSpawner : MonoBehaviour {
 
     private void SpawnBluePlanet()
     {
-        svatcha.GetComponent<PlanetRandomMovement>().enabled = false;
         svatcha.GetComponent<BluePlanet>().enabled = false;
+        svatcha.hasSpawned = true;
         svatcha.GetComponent<Collider2D>().enabled = false;
         StartCoroutine(MoveBluePlanetOnScreen());
         StartCoroutine(reenableBluePlanet());
@@ -109,7 +108,7 @@ public class PlanetSpawner : MonoBehaviour {
             yield return null;
         }
         GreenPlanet.isActive = true;
-        toklar.GetComponent<PlanetRandomMovement>().enabled = true;
+        toklar.GetComponent<PlanetRandomMovement>().IsActive = true;
         toklar.GetComponent<Collider2D>().enabled = true;
     }
 
@@ -119,8 +118,8 @@ public class PlanetSpawner : MonoBehaviour {
         {
             yield return null;
         }
+        svatcha.GetComponent<PlanetRandomMovement>().IsActive = true;
         svatcha.GetComponent<BluePlanet>().enabled = true;
-        svatcha.GetComponent<PlanetRandomMovement>().enabled = true;
         svatcha.GetComponent<Collider2D>().enabled = true;
     }
 
@@ -129,7 +128,7 @@ public class PlanetSpawner : MonoBehaviour {
     private IEnumerator MoveRedPlanetOnScreen()
     {
         planetIsMoving = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
         while (zorgna.transform.position.x > 2.0f)
         {
             zorgna.transform.position += new Vector3(-0.1f, 0, 0);
@@ -142,7 +141,7 @@ public class PlanetSpawner : MonoBehaviour {
     private IEnumerator MoveGreenPlanetOnScreen()
     {
         planetIsMoving = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
         while (toklar.transform.position.x > 2.0f)
         {
             toklar.transform.position += new Vector3(-0.1f, 0, 0);
@@ -155,7 +154,7 @@ public class PlanetSpawner : MonoBehaviour {
     private IEnumerator MoveBluePlanetOnScreen()
     {
         planetIsMoving = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
         while (svatcha.transform.position.x > 2.0f)
         {
             svatcha.transform.position += new Vector3(-0.1f, 0, 0);

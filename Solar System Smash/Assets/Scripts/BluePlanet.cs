@@ -3,13 +3,13 @@ using System.Collections;
 
 public class BluePlanet : MonoBehaviour
 {
+    public bool hasSpawned = false;
+    private int count = 1;
     private int health = 10;
 
     // Use this for initialization
     private void Start()
     {
-        GameObject.FindGameObjectWithTag("Moon").BroadcastMessage("switchControls");
-        GameObject.FindGameObjectWithTag("Sun").BroadcastMessage("flipInput");
     }
 
     private void reduceHealth()
@@ -20,6 +20,13 @@ public class BluePlanet : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (hasSpawned && count == 1)
+        {
+            GameObject.FindGameObjectWithTag("Moon").BroadcastMessage("switchControls");
+            GameObject.FindGameObjectWithTag("Sun").BroadcastMessage("flipInput");
+            count++;
+        }
+
         if (health == 0)
         {
             //GameObject.Find("GameManager").
