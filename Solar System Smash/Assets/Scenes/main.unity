@@ -663,6 +663,14 @@ Prefab:
       propertyPath: clipList.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: 70489086f02a76c40b93ff699f27c7c5, type: 3}
+    - target: {fileID: 11474820, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: volume
+      value: .899999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474820, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: songName
+      value: main game
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f11c3301be70f894cb3514a08647a980, type: 2}
   m_IsPrefabParent: 0
@@ -1368,7 +1376,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e2b5793dc6f7274cb1b3eed14b45bfa, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1276390218
+--- !u!114 &1276390218 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11489890, guid: 8e2b5793dc6f7274cb1b3eed14b45bfa,
     type: 2}
@@ -1416,13 +1424,13 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1304970281
+--- !u!114 &1304970281 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11435770, guid: 2b41b00173490ed47ba52b8554e0dd9d,
     type: 2}
   m_PrefabInternal: {fileID: 1304970280}
   m_Script: {fileID: 11500000, guid: c9f38da884dc80b4684c79ccd00ceb18, type: 3}
---- !u!114 &1429232218
+--- !u!114 &1429232218 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11468944, guid: e7cac9395e4152345bc6cc7a178889bd,
     type: 2}
@@ -1609,7 +1617,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00ec1d66db371334e8803d63799c8e71, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1708042385
+--- !u!114 &1708042385 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11419430, guid: 00ec1d66db371334e8803d63799c8e71,
     type: 2}
@@ -1769,7 +1777,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4abeea772a57ee4490be61655bd0b95, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1841998812
+--- !u!114 &1841998812 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11424228, guid: c4abeea772a57ee4490be61655bd0b95,
     type: 2}

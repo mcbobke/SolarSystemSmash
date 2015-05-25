@@ -15,6 +15,7 @@ public class MusicPlayer : MonoBehaviour {
     public float tempo = 128.0f;
     public int numBeatsPerClip = 64;
     public float volume = 0.7f;
+    public string songName;
     public AudioClip[] clipList = new AudioClip[5];  // You can change the size of this list in the Unity editor
 
     private int index;
@@ -59,14 +60,23 @@ public class MusicPlayer : MonoBehaviour {
 
     int GetNextClipIndex(int currentindex)
     {
-        if (currentindex + 1 == 5)
+        if (songName == "main game")
         {
-            return 1;
+            if (currentindex + 1 == 5)
+            {
+                return 1;
+            }
+            else
+            {
+                return currentindex + 1;
+            }
         }
         else
         {
-            return currentindex + 1;
+            return 0;
         }
+        
     }
+
     
 }

@@ -430,6 +430,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1001 &1976234792
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11474820, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: clipList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 499182, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499182, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499182, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499182, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499182, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499182, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499182, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 499182, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474820, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: tempo
+      value: 132
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474820, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: numBeatsPerClip
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474820, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: volume
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474820, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: clipList.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ed212d7874616c4cac5a290c4ed4f46, type: 3}
+    - target: {fileID: 11474820, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+      propertyPath: songName
+      value: game lose
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f11c3301be70f894cb3514a08647a980, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2023598700
 GameObject:
   m_ObjectHideFlags: 0
