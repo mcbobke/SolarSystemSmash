@@ -43,5 +43,10 @@ public class BluePlanet : MonoBehaviour
             health--;
 			Destroy(col.gameObject);
         }
+
+		if (col.gameObject.tag == "Moon") {
+			GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("bluePlanetDamage");
+
+		}
     }
 }

@@ -40,6 +40,11 @@ public class MoonPlayer : MonoBehaviour {
 		healthBarSliderMoon.value = 0.0f;
 	}
 
+	void bluePlanetDamage()
+	{
+		healthBarSliderMoon.value -= 0.2f;
+	}
+
 	void applyDamage()
 	{
 		if (!immune) {

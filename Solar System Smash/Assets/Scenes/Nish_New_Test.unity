@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28961ca25b78d41c98a22ba7d512e558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasSpawned: 0
 --- !u!50 &48401818
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1611,6 +1612,10 @@ Prefab:
       propertyPath: m_TagString
       value: Planet
       objectReference: {fileID: 0}
+    - target: {fileID: 149254, guid: 36a1da1447a7dc84ca9e9f550a32ea12, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36a1da1447a7dc84ca9e9f550a32ea12, type: 2}
   m_IsPrefabParent: 0
@@ -1693,7 +1698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &2007753341
 CircleCollider2D:
   m_ObjectHideFlags: 0
