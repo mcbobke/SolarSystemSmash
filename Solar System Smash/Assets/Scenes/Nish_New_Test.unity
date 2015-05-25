@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32eb8032d43874ff4b3e3a8420b691ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffectPlayer: {fileID: 0}
 --- !u!58 &223451466
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -642,6 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarSliderMoon: {fileID: 239368267}
+  soundEffectPlayer: {fileID: 0}
 --- !u!58 &463745958
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -859,6 +861,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!1 &800318175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 800318178}
+  - 212: {fileID: 800318177}
+  - 114: {fileID: 800318176}
+  m_Layer: 0
+  m_Name: Crosshair
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &800318176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 800318175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46ec6748afc44e52a459854121693dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crosshairImage: {fileID: 2800000, guid: b6d625ab1ba70499ea8e5d6096d4cb19, type: 3}
+  position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+--- !u!212 &800318177
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 800318175}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b6d625ab1ba70499ea8e5d6096d4cb19, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &800318178
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 800318175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
 --- !u!1 &803628564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc69c375cc2b46d68360816fa857ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffectPlayer: {fileID: 0}
 --- !u!58 &1104852450
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1819,7 +1895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41db71678f7df4247be17a8c771f7f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projPrefab: {fileID: 169406, guid: ef9d7c088b9e5534ea76493e469f9d5c, type: 2}
+  projPrefab: {fileID: 106360, guid: ef9d7c088b9e5534ea76493e469f9d5c, type: 2}
   projSpawnPoint: {fileID: 1780566280}
   healthBarSlider: {fileID: 912784978}
   soundEffectPlayer: {fileID: 0}

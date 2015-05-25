@@ -32,7 +32,7 @@ public class MoonPlayer : MonoBehaviour {
 	{
 		if(healthBarSliderMoon.value > 0 && healthBarSliderMoon.value < healthBarSliderMoon.maxValue)
 		{
-			healthBarSliderMoon.value += 0.2f;
+			healthBarSliderMoon.value += 0.4f;
 		}
 	}
 

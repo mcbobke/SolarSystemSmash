@@ -45,7 +45,7 @@ public class SunPlayer : MonoBehaviour
     {
         if (healthBarSlider.value > 0 && healthBarSlider.value < healthBarSlider.maxValue)
         {
-            healthBarSlider.value += 0.2f;
+            healthBarSlider.value += 0.4f;
         }
     }
 
