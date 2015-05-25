@@ -29,20 +29,20 @@ public class GameManager : MonoBehaviour
         if (numPlanetsDestroyed == 3)
             Application.LoadLevel("Nick's Win Scene");
 
-        if (numCometsDestroyed == 10 && !planet0Spawned)
+        if (numCometsDestroyed == 15 && !planet0Spawned)
         {
             SpawnPlanet(0);
             planet0Spawned = true;
             sun.GetComponent<SunPlayer>().RedPlanetSpawned = true;
         }
             
-        else if (numCometsDestroyed == 20 && !planet1Spawned)
+        else if (numCometsDestroyed == 30 && !planet1Spawned)
         {
             SpawnPlanet(1);
             planet1Spawned = true;
         }
         
-        else if (numCometsDestroyed == 30 && !planet2Spawned)
+        else if (numCometsDestroyed == 45 && !planet2Spawned)
         {
             SpawnPlanet(2);
             planet2Spawned = true;
