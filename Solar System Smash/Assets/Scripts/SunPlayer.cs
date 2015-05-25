@@ -8,8 +8,11 @@ public class SunPlayer : MonoBehaviour
     private bool inputFlipped = false;
     private Vector3 mousePosition;
     private Vector3 startPosition;
-	private float timer;
+	private float timer = 10;
 	private bool inputFlipState;
+    private bool immunityOff = false;
+    private float timebetweenshot;
+
 
     public GameObject projPrefab;
     public GameObject projSpawnPoint;
@@ -24,12 +27,14 @@ public class SunPlayer : MonoBehaviour
         mousePosition = Input.mousePosition;
         startPosition = transform.position;
 		inputFlipState = inputFlipped;
+        immunityOff = false;
     }
 
 	public void setImmuneSun()
 	{
 		inputFlipped = false;
 		timer = 10;
+        immunityOff = false;
 	}
 
 	private void gainHealthSun()
@@ -53,15 +58,19 @@ public class SunPlayer : MonoBehaviour
 
     private void Update()
     {
-
+        timebetweenshot += Time.deltaTime;
 		if (timer > 0) {
 			
 			timer -= Time.deltaTime;
 			
 		}
 		if (timer <= 0) {
-
-			inputFlipped = inputFlipState;
+            if (!immunityOff)
+            {
+                soundEffectPlayer.PlaySoundEffect("stop_immune", 0.5f);
+                inputFlipped = inputFlipState;
+                immunityOff = true;
+            }
 			
 		}
 
@@ -101,9 +110,11 @@ public class SunPlayer : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
 
         // Fire
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && timebetweenshot > 0.5f)
+        {
             Fire(mousePosition);
-
+            timebetweenshot = 0f;
+        }
         // Ensure that the x position of the sun is the same as the start
         if (transform.position.x != startPosition.x)
             transform.position = new Vector3(startPosition.x, transform.position.y);
@@ -127,7 +138,7 @@ public class SunPlayer : MonoBehaviour
     {
         Quaternion projRotation = transform.rotation;
         GameObject proj = (GameObject) Instantiate(projPrefab, projSpawnPoint.transform.position, projRotation);
-        proj.GetComponent<Rigidbody2D>().AddForce(proj.transform.up*500f);
-        //soundEffectPlayer.PlaySoundEffect("sun_shoot", 0.5f);
+        proj.GetComponent<Rigidbody2D>().AddForce(proj.transform.up*10f);
+        soundEffectPlayer.PlaySoundEffect("sun_shoot", 0.5f);
     }
 }

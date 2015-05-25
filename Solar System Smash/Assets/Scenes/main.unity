@@ -524,6 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarSliderMoon: {fileID: 245095184}
+  soundEffectPlayer: {fileID: 1304970281}
 --- !u!58 &463745958
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -931,7 +932,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
 --- !u!1 &881846814
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc69c375cc2b46d68360816fa857ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffectPlayer: {fileID: 1304970281}
 --- !u!58 &881846816
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1269,7 +1271,7 @@ Transform:
   m_LocalScale: {x: .174999997, y: .174999997, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &1263910145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,7 +1368,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e2b5793dc6f7274cb1b3eed14b45bfa, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1276390218 stripped
+--- !u!114 &1276390218
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11489890, guid: 8e2b5793dc6f7274cb1b3eed14b45bfa,
     type: 2}
@@ -1414,13 +1416,13 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1304970281 stripped
+--- !u!114 &1304970281
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11435770, guid: 2b41b00173490ed47ba52b8554e0dd9d,
     type: 2}
   m_PrefabInternal: {fileID: 1304970280}
   m_Script: {fileID: 11500000, guid: c9f38da884dc80b4684c79ccd00ceb18, type: 3}
---- !u!114 &1429232218 stripped
+--- !u!114 &1429232218
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11468944, guid: e7cac9395e4152345bc6cc7a178889bd,
     type: 2}
@@ -1603,7 +1605,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00ec1d66db371334e8803d63799c8e71, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1708042385 stripped
+--- !u!114 &1708042385
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11419430, guid: 00ec1d66db371334e8803d63799c8e71,
     type: 2}
@@ -1665,6 +1667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32eb8032d43874ff4b3e3a8420b691ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffectPlayer: {fileID: 1304970281}
 --- !u!58 &1796473504
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1762,7 +1765,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4abeea772a57ee4490be61655bd0b95, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1841998812 stripped
+--- !u!114 &1841998812
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11424228, guid: c4abeea772a57ee4490be61655bd0b95,
     type: 2}
@@ -1872,7 +1875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41db71678f7df4247be17a8c771f7f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projPrefab: {fileID: 169406, guid: ef9d7c088b9e5534ea76493e469f9d5c, type: 2}
+  projPrefab: {fileID: 106360, guid: ef9d7c088b9e5534ea76493e469f9d5c, type: 2}
   projSpawnPoint: {fileID: 1780566280}
   healthBarSlider: {fileID: 77221906}
   soundEffectPlayer: {fileID: 1304970281}
