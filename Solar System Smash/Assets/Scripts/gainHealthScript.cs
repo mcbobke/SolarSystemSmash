@@ -3,7 +3,6 @@ using System.Collections;
 
 public class gainHealthScript : MonoBehaviour {
 
-    public SoundEffectPlayer soundEffectPlayer;
 	private Renderer r;
 
 	// Use this for initialization
@@ -37,7 +36,7 @@ public class gainHealthScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Moon") {
-            soundEffectPlayer.PlaySoundEffect("health_get");
+			
 			col.gameObject.BroadcastMessage("gainHealth");
 			GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("gainHealthSun");
             this.gameObject.SetActive(false);			

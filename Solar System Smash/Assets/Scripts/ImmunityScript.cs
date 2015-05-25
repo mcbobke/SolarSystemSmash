@@ -3,7 +3,6 @@ using System.Collections;
 
 public class ImmunityScript : MonoBehaviour {
 
-    public SoundEffectPlayer soundEffectPlayer;
 	private Renderer r;
 
 	// Use this for initialization
@@ -30,7 +29,7 @@ public class ImmunityScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Moon") {
-            soundEffectPlayer.PlaySoundEffect("immune_get");
+			
 			col.gameObject.BroadcastMessage("setImmune");
 			GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("setImmuneSun");
             this.gameObject.SetActive(false);

@@ -524,7 +524,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarSliderMoon: {fileID: 245095184}
-  soundEffectPlayer: {fileID: 1304970281}
 --- !u!58 &463745958
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -962,7 +961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc69c375cc2b46d68360816fa857ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectPlayer: {fileID: 1304970281}
 --- !u!58 &881846816
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1374,11 +1372,53 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1276390217}
   m_Script: {fileID: 11500000, guid: 19b31e1414383408e8dc75585ab21b22, type: 3}
+--- !u!1001 &1304970280
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!114 &1304970281 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11435770, guid: 2b41b00173490ed47ba52b8554e0dd9d,
     type: 2}
-  m_PrefabInternal: {fileID: 1918075059}
+  m_PrefabInternal: {fileID: 1304970280}
   m_Script: {fileID: 11500000, guid: c9f38da884dc80b4684c79ccd00ceb18, type: 3}
 --- !u!114 &1429232218 stripped
 MonoBehaviour:
@@ -1625,7 +1665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32eb8032d43874ff4b3e3a8420b691ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectPlayer: {fileID: 1304970281}
 --- !u!58 &1796473504
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1729,52 +1768,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1841998811}
   m_Script: {fileID: 11500000, guid: 5e8f30e221c701d42bb8f580283e4903, type: 3}
---- !u!1001 &1918075059
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 466530, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 11435770, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
-      propertyPath: loopingAudioSource
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2b41b00173490ed47ba52b8554e0dd9d, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1986104922
 GameObject:
   m_ObjectHideFlags: 0
