@@ -42,6 +42,10 @@ public class BluePlanet : MonoBehaviour
         {
             health--;
 			Destroy(col.gameObject);
+            if(health == 0)
+            {
+                Application.LoadLevel("Nick's Win Screen");
+            }
         }
 
 		if (col.gameObject.tag == "Moon") {
