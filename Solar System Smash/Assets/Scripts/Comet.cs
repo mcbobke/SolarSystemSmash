@@ -87,9 +87,8 @@ public class Comet : MonoBehaviour
 
         if (other.gameObject.tag == "LeftBoundary")
         {
-            Debug.Log("Comet passed the sun.");
 			GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("reduceHealth");
-			if(transform.parent.tag == "Moon")
+			if(transform.parent != null && transform.parent.tag == "Moon")
 			{
 				MoonPlayer.cometCount--;
 			}
@@ -98,7 +97,7 @@ public class Comet : MonoBehaviour
         }
 		else if (other.gameObject.tag != "Comet" && other.gameObject.tag != "Moon" && other.gameObject.tag != "Planet") 
 		{
-			if(transform.parent.tag == "Moon")
+			if(transform.parent != null && transform.parent.tag == "Moon")
 			{
 				MoonPlayer.cometCount--;
 			}

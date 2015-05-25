@@ -49,12 +49,13 @@ public class RedPlanet : MonoBehaviour
     {
         if (isActive)
         {
-            if (coll.gameObject.tag == "Projectile")
+            if (coll.gameObject.tag == "Projectile(Clone)")
             {
                 --health;
+                Destroy(coll.gameObject);
                 if (health <= 0)
                 {
-                    //GameObject.Find("GameManager").
+                    GameObject.Find("GameManager").GetComponent<GameManager>().planetDestroyed();
                     Destroy(gameObject);
                 }
             }  

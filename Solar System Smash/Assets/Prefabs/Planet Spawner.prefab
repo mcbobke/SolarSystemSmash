@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &125566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 460084}
+  - 114: {fileID: 11419430}
+  m_Layer: 0
+  m_Name: Planet Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &460084
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.792880893, y: .84911108, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11419430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b52b88fdc536a4699d92cb4884c0a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cometSpawner: {fileID: 0}
+  messageList:
+  - {fileID: 106144, guid: 2eeaefeb7923cca47acd4424a2ed3d20, type: 2}
+  - {fileID: 197324, guid: da3707c23d988254389a03f7e1a2ca37, type: 2}
+  - {fileID: 132166, guid: 32a8cc14005afcb45b02f737b4f83cef, type: 2}
+  zorgna: {fileID: 11415802, guid: 36a1da1447a7dc84ca9e9f550a32ea12, type: 2}
+  toklar: {fileID: 0}
+  svatcha: {fileID: 11468944, guid: e7cac9395e4152345bc6cc7a178889bd, type: 2}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 125566}
+  m_IsPrefabParent: 1

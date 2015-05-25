@@ -25,7 +25,6 @@ public class MoonPlayer : MonoBehaviour {
 	    cometCount = 0;
 		controlSwitchState = isControlSwitched;
         target = GameObject.FindGameObjectWithTag("Planet3");
-        target.tag = "Planet3";
 	}
 
 	void gainHealth()
