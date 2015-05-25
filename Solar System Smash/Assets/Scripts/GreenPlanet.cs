@@ -5,7 +5,7 @@ public class GreenPlanet : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	private int health = 10;
-	public static bool isActive = false;
+	public static bool isActive = true;
 	private int count = 1;
 	// Use this for initialization
 	void Start () {
