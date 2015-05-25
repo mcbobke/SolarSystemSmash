@@ -4,7 +4,6 @@ using System.Collections.Generic;
 public class SoundEffectPlayer : MonoBehaviour {
 
     public AudioSource audioSource;
-    public AudioSource loopingAudioSource;
     public AudioClip[] clipList = new AudioClip[4];         // Size of array can be changed in Unity Editor
     public Dictionary<string, AudioClip> clipDict = new Dictionary<string, AudioClip>();
 
@@ -12,7 +11,6 @@ public class SoundEffectPlayer : MonoBehaviour {
 	void Start() 
     {
         audioSource = gameObject.GetComponent<AudioSource>();
-        loopingAudioSource = gameObject.GetComponent<AudioSource>();
         foreach (AudioClip clip in clipList)
         {
             clipDict.Add(clip.name, clip);
@@ -22,17 +20,6 @@ public class SoundEffectPlayer : MonoBehaviour {
     public void PlaySoundEffect(string name, float volume = 0.8f)
     {
         audioSource.PlayOneShot(clipDict[name], volume);
-    }
-
-    public void PlaySoundEffectLoop(string name, float volume = 0.8f)
-    {
-        loopingAudioSource.clip = clipDict[name];
-        loopingAudioSource.Play();
-    }
-
-    public void StopSoundEffectLoop()
-    {
-        loopingAudioSource.Stop();
     }
 
 }

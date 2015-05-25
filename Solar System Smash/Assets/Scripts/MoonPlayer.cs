@@ -16,6 +16,7 @@ public class MoonPlayer : MonoBehaviour {
 	private float timer;
 	private bool controlSwitchState;
 	public Slider healthBarSliderMoon;
+    public SoundEffectPlayer soundEffectPlayer;
 
 	// Use this for initialization
 	void Start () {
@@ -60,7 +61,7 @@ public class MoonPlayer : MonoBehaviour {
 	{
 		immune = true;
 		isControlSwitched = false;
-		timer = 5;
+		timer = 10;
 	}
 	
 	void Update () {

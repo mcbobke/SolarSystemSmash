@@ -10,7 +10,7 @@ public class SunPlayer : MonoBehaviour
     private Vector3 startPosition;
 	private float timer;
 	private bool inputFlipState;
-
+    private bool immunityOff = false;
     public GameObject projPrefab;
     public GameObject projSpawnPoint;
     public Slider healthBarSlider;  //health bar slider reference
@@ -30,6 +30,7 @@ public class SunPlayer : MonoBehaviour
 	{
 		inputFlipped = false;
 		timer = 10;
+        immunityOff = false;
 	}
 
 	private void gainHealthSun()
@@ -60,8 +61,12 @@ public class SunPlayer : MonoBehaviour
 			
 		}
 		if (timer <= 0) {
-
-			inputFlipped = inputFlipState;
+            if (!immunityOff)
+            {
+                soundEffectPlayer.PlaySoundEffect("immune_stop");
+                inputFlipped = inputFlipState;
+                immunityOff = true;
+            }
 			
 		}
 
