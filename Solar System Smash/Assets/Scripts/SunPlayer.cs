@@ -8,8 +8,9 @@ public class SunPlayer : MonoBehaviour
     private bool inputFlipped = false;
     private Vector3 mousePosition;
     private Vector3 startPosition;
-	private float timer;
+	private float timer = 10;
 	private bool inputFlipState;
+    private bool immunityOff = false;
 
     public GameObject projPrefab;
     public GameObject projSpawnPoint;
@@ -24,12 +25,14 @@ public class SunPlayer : MonoBehaviour
         mousePosition = Input.mousePosition;
         startPosition = transform.position;
 		inputFlipState = inputFlipped;
+        immunityOff = false;
     }
 
 	public void setImmuneSun()
 	{
 		inputFlipped = false;
 		timer = 10;
+        immunityOff = false;
 	}
 
 	private void gainHealthSun()
@@ -60,8 +63,12 @@ public class SunPlayer : MonoBehaviour
 			
 		}
 		if (timer <= 0) {
-
-			inputFlipped = inputFlipState;
+            if (!immunityOff)
+            {
+                soundEffectPlayer.PlaySoundEffect("stop_immune", 0.5f);
+                inputFlipped = inputFlipState;
+                immunityOff = true;
+            }
 			
 		}
 

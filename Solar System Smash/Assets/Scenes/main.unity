@@ -524,6 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarSliderMoon: {fileID: 245095184}
+  soundEffectPlayer: {fileID: 0}
 --- !u!58 &463745958
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -961,6 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc69c375cc2b46d68360816fa857ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffectPlayer: {fileID: 0}
 --- !u!58 &881846816
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1665,6 +1667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32eb8032d43874ff4b3e3a8420b691ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffectPlayer: {fileID: 0}
 --- !u!58 &1796473504
 CircleCollider2D:
   m_ObjectHideFlags: 0

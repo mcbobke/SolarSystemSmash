@@ -212,8 +212,9 @@ MonoBehaviour:
   clipList:
   - {fileID: 8300000, guid: 147cf8258fdfe6d4599646684d387ca8, type: 3}
   - {fileID: 8300000, guid: de93474d96ccd4949b7bce927a0e2df7, type: 3}
-  - {fileID: 8300000, guid: 8639cea6a1fcbff4ca87274906cffa85, type: 3}
-  - {fileID: 8300000, guid: b4141fed72128b446bed365ffa72005a, type: 3}
+  - {fileID: 8300000, guid: 9951f696e9ccf624baac840b7bea6595, type: 3}
+  - {fileID: 8300000, guid: 072271ad1130f504f819eaf65d1f711b, type: 3}
+  - {fileID: 8300000, guid: dbc5a8d6508c8d745a58e8f5c1b3b790, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

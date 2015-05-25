@@ -16,6 +16,7 @@ public class MoonPlayer : MonoBehaviour {
 	private float timer;
 	private bool controlSwitchState;
 	public Slider healthBarSliderMoon;
+    public SoundEffectPlayer soundEffectPlayer;
 
 	// Use this for initialization
 	void Start () {
@@ -43,6 +44,7 @@ public class MoonPlayer : MonoBehaviour {
 	void applyDamage()
 	{
 		if (!immune) {
+            soundEffectPlayer.PlaySoundEffect("moon_comet_hit", 0.7f);
 			healthBarSliderMoon.value -= 0.2f;
 		}
 	}
@@ -60,7 +62,7 @@ public class MoonPlayer : MonoBehaviour {
 	{
 		immune = true;
 		isControlSwitched = false;
-		timer = 5;
+		timer = 10;
 	}
 	
 	void Update () {
@@ -150,6 +152,7 @@ public class MoonPlayer : MonoBehaviour {
 		}
 
 		if ((col.gameObject.name == "Projectile(Clone)" || col.gameObject.name == "Planet1Projectile(Clone)") && healthBarSliderMoon.value > 0) {
+
 
 			applyDamage();
             Destroy(col.gameObject);
