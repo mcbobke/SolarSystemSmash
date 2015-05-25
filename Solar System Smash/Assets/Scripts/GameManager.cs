@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
 
     private int numCometsDestroyed;
     private int numPlanetsDestroyed;
+    private bool planet0Spawned;
+    private bool planet1Spawned;
+    private bool planet2Spawned;
 
     private void Start()
     {
@@ -26,12 +29,23 @@ public class GameManager : MonoBehaviour
         if (numPlanetsDestroyed == 3)
             Application.LoadLevel("Nick's Win Scene");
 
-        if (numCometsDestroyed == 20)
+        if (numCometsDestroyed == 20 && !planet0Spawned)
+        {
             SpawnPlanet(0);
-        else if (numCometsDestroyed == 50)
+            planet0Spawned = true;
+        }
+            
+        else if (numCometsDestroyed == 50 && !planet1Spawned)
+        {
             SpawnPlanet(1);
-        else if (numCometsDestroyed == 90)
+            planet1Spawned = true;
+        }
+        
+        else if (numCometsDestroyed == 90 && !planet2Spawned)
+        {
             SpawnPlanet(2);
+            planet2Spawned = true;
+        }
     }
 
     public void cometDestroyed()

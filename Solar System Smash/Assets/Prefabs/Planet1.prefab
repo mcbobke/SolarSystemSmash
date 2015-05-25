@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTimeSinceLastFire: 3
-  health: 20
+  health: 2
   projPrefab: {fileID: 133310, guid: 77fc0f2d646ca034d8edf92acb7b7a79, type: 2}
   projSpawnPoint: {fileID: 114054}
-  moon: {fileID: 0}
+  movementSpeed: 0
 --- !u!212 &21224548
 SpriteRenderer:
   m_ObjectHideFlags: 1

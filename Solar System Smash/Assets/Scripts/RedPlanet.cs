@@ -49,7 +49,7 @@ public class RedPlanet : MonoBehaviour
     {
         if (isActive)
         {
-            if (coll.gameObject.tag == "Projectile(Clone)")
+            if (coll.gameObject.tag == "Projectile")
             {
                 --health;
                 Destroy(coll.gameObject);
