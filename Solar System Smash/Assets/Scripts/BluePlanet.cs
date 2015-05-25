@@ -22,6 +22,7 @@ public class BluePlanet : MonoBehaviour
     {
         if (health == 0)
         {
+            //GameObject.Find("GameManager").
             Destroy(this.gameObject);
             GameObject.FindGameObjectWithTag("Moon").BroadcastMessage("switchControls");
             GameObject.FindGameObjectWithTag("Sun").BroadcastMessage("flipInput");

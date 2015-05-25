@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
     {
         if (coll.gameObject.tag == "Comet")
         {
+            GameObject.Find("GameManager").GetComponent<GameManager>().cometDestroyed();
             Destroy(coll.gameObject);
             Destroy(gameObject);
         }
