@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
         {
             SpawnPlanet(0);
             planet0Spawned = true;
+            sun.GetComponent<SunPlayer>().RedPlanetSpawned = true;
         }
             
         else if (numCometsDestroyed == 20 && !planet1Spawned)

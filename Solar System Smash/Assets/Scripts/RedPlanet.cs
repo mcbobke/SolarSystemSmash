@@ -56,6 +56,7 @@ public class RedPlanet : MonoBehaviour
                 if (health <= 0)
                 {
                     GameObject.Find("GameManager").GetComponent<GameManager>().planetDestroyed();
+                    GameObject.Find("GameManager").GetComponent<GameManager>().sun.RedPlanetSpawned = false;
                     Destroy(gameObject);
                 }
             }  
