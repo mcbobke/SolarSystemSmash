@@ -43,6 +43,7 @@ public class GreenPlanet : MonoBehaviour {
 		{
             //GameObject.Find("GameManager").
 			Destroy(this.gameObject);
+            GameObject.Find("GameManager").GetComponent<GameManager>().planetDestroyed();
 			GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("setGreenPlanet");
 		}
 		//rb.AddForce (Vector2.up * 20 * Time.deltaTime);

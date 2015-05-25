@@ -35,17 +35,14 @@ public class PlanetSpawner : MonoBehaviour {
         zorgna = Instantiate(zorgna, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as RedPlanet;
         zorgna.gameObject.SetActive(false);
         toklar.gameObject.SetActive(false);
-        //svatcha = Instantiate(svatcha, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
         svatcha.gameObject.SetActive(false);
-        //hPowerup = Instantiate(healthPowerup, new Vector3(Random.Range(-7.0f, 0.0f), Random.Range(-4.0f, 4.0f), 0), new Quaternion(0, 0, 0, 0)) as gainHealthScript;
-        //iPowerup = Instantiate(immunePowerup, new Vector3(Random.Range(-7f, 0f), Random.Range(-4f, 4f), 0), new Quaternion(0, 0, 0, 0)) as ImmunityScript;
 
 	}
 
     public void SpawnPlanet(int index)
     {
-        //hPowerup.gameObject.SetActive(true);
-        //iPowerup.gameObject.SetActive(true);
+        hPowerup = Instantiate(healthPowerup, new Vector3(Random.Range(-7.0f, 0.0f), Random.Range(-4.0f, 4.0f), 0), new Quaternion(0, 0, 0, 0)) as gainHealthScript;
+        iPowerup = Instantiate(immunePowerup, new Vector3(Random.Range(-7f, 0f), Random.Range(-4f, 4f), 0), new Quaternion(0, 0, 0, 0)) as ImmunityScript;
 
         switch (index)
         {
@@ -113,6 +110,8 @@ public class PlanetSpawner : MonoBehaviour {
         zorgna.GetComponent<Collider2D>().enabled = true;
         //hPowerup.gameObject.SetActive(false);
         //iPowerup.gameObject.SetActive(false);
+        Destroy(hPowerup.gameObject);
+        Destroy(iPowerup.gameObject);
     }
 
     private IEnumerator reenableGreenPlanet()
@@ -126,6 +125,8 @@ public class PlanetSpawner : MonoBehaviour {
         toklar.GetComponent<Collider2D>().enabled = true;
         //hPowerup.gameObject.SetActive(false);
         //iPowerup.gameObject.SetActive(false);
+        Destroy(hPowerup.gameObject);
+        Destroy(iPowerup.gameObject);
 
     }
 
@@ -140,6 +141,8 @@ public class PlanetSpawner : MonoBehaviour {
         svatcha.GetComponent<Collider2D>().enabled = true;
         //hPowerup.gameObject.SetActive(false);
         //iPowerup.gameObject.SetActive(false);
+        Destroy(hPowerup.gameObject);
+        Destroy(iPowerup.gameObject);
 
     }
 

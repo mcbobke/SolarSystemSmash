@@ -39,8 +39,7 @@ public class gainHealthScript : MonoBehaviour {
 			
 			col.gameObject.BroadcastMessage("gainHealth");
 			GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("gainHealthSun");
-			Destroy(this.gameObject);
-			
+            this.gameObject.SetActive(false);			
 		}
 	}
 

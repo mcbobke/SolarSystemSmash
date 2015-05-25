@@ -32,7 +32,7 @@ public class ImmunityScript : MonoBehaviour {
 			
 			col.gameObject.BroadcastMessage("setImmune");
 			GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("setImmuneSun");
-			Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
 
 		}
 	}
