@@ -14,9 +14,34 @@ Platform assembly: D:\GitHub\SolarSystemSmash\Solar System Smash\Build\test_Data
 Loading D:\GitHub\SolarSystemSmash\Solar System Smash\Build\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: D:\GitHub\SolarSystemSmash\Solar System Smash\Build\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading D:\GitHub\SolarSystemSmash\Solar System Smash\Build\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.036 seconds
+- Completed reload, in  0.030 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: D:\GitHub\SolarSystemSmash\Solar System Smash\Build\test_Data\Managed\System.Core.dll (this message is harmless)
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.245301 ms
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 197.
+Total: 0.114953 ms (FindLiveObjects: 0.011290 ms CreateObjectMapping: 0.014882 ms MarkObjects: 0.076977 ms  DeleteObjects: 0.011546 ms)
+
+Platform assembly: D:\GitHub\SolarSystemSmash\Solar System Smash\Build\test_Data\Managed\System.dll (this message is harmless)
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.202390 ms
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 206.
+Total: 0.108281 ms (FindLiveObjects: 0.025402 ms CreateObjectMapping: 0.006671 ms MarkObjects: 0.065430 ms  DeleteObjects: 0.009750 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.361794 ms
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 197.
+Total: 0.099557 ms (FindLiveObjects: 0.013342 ms CreateObjectMapping: 0.006158 ms MarkObjects: 0.069279 ms  DeleteObjects: 0.010263 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.219899 ms
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 206.
+Total: 0.121624 ms (FindLiveObjects: 0.018474 ms CreateObjectMapping: 0.010263 ms MarkObjects: 0.085188 ms  DeleteObjects: 0.007441 ms)
+

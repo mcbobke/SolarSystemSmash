@@ -6,4 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Nick's Main Menu Test.unity
+  - enabled: 1
     path: Assets/Scenes/main.unity
+  - enabled: 1
+    path: Assets/Scenes/Nick's HTP.unity
+  - enabled: 1
+    path: Assets/Scenes/Nick's Win Screen.unity
+  - enabled: 1
+    path: Assets/Scenes/loseScene.unity
