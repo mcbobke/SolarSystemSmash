@@ -11,6 +11,8 @@ public class SunPlayer : MonoBehaviour
 	private float timer = 10;
 	private bool inputFlipState;
     private bool immunityOff = false;
+    private float timebetweenshot;
+
 
     public GameObject projPrefab;
     public GameObject projSpawnPoint;
@@ -56,7 +58,7 @@ public class SunPlayer : MonoBehaviour
 
     private void Update()
     {
-
+        timebetweenshot += Time.deltaTime;
 		if (timer > 0) {
 			
 			timer -= Time.deltaTime;
@@ -108,9 +110,11 @@ public class SunPlayer : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
 
         // Fire
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && timebetweenshot > 0.5f)
+        {
             Fire(mousePosition);
-
+            timebetweenshot = 0f;
+        }
         // Ensure that the x position of the sun is the same as the start
         if (transform.position.x != startPosition.x)
             transform.position = new Vector3(startPosition.x, transform.position.y);
