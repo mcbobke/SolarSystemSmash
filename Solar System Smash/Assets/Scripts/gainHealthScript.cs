@@ -37,7 +37,7 @@ public class gainHealthScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Moon") {
-            soundEffectPlayer.PlaySoundEffect("get_health", 0.5f);
+            soundEffectPlayer.PlaySoundEffect("get_health", 0.7f);
 			col.gameObject.BroadcastMessage("gainHealth");
 			GameObject.FindGameObjectWithTag ("Sun").BroadcastMessage("gainHealthSun");
             this.gameObject.SetActive(false);			

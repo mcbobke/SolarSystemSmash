@@ -49,7 +49,7 @@ public class MoonPlayer : MonoBehaviour {
 	void applyDamage()
 	{
 		if (!immune) {
-            soundEffectPlayer.PlaySoundEffect("moon_comet_hit", 0.7f);
+            soundEffectPlayer.PlaySoundEffect("moon_comet_hit", 0.5f);
 			healthBarSliderMoon.value -= 0.2f;
 		}
 	}

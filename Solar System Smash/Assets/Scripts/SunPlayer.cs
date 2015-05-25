@@ -9,7 +9,7 @@ public class SunPlayer : MonoBehaviour
     private bool inputFlipped;
     private Vector3 mousePosition;
     private Vector3 startPosition;
-    private float timer = 10;
+    private float timer;
     private bool inputFlipState;
     private bool immunityOff;
     private float timebetweenshot;
@@ -67,10 +67,11 @@ public class SunPlayer : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
-        if (timer <= 0)
+        if (timer < 0)
         {
             if (!immunityOff)
             {
+                Debug.Log("immunity off now set to true");
                 soundEffectPlayer.PlaySoundEffect("stop_immune", 0.5f);
                 inputFlipped = inputFlipState;
                 immunityOff = true;
@@ -146,7 +147,7 @@ public class SunPlayer : MonoBehaviour
 
         else
         {
-            proj.GetComponent<Rigidbody2D>().AddForce(proj.transform.up*1f);
+            proj.GetComponent<Rigidbody2D>().AddForce(proj.transform.up*3f);
         }
 
         soundEffectPlayer.PlaySoundEffect("sun_shoot", 0.5f);
