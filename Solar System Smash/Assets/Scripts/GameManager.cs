@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
             Application.LoadLevel("loseScene");
 
         if (numPlanetsDestroyed == 3)
-            Application.LoadLevel("winScene");
+            Application.LoadLevel("Nick's Win Scene");
 
         if (numCometsDestroyed == 20)
             SpawnPlanet(0);
