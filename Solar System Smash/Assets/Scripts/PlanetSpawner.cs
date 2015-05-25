@@ -32,12 +32,6 @@ public class PlanetSpawner : MonoBehaviour {
         toklar.gameObject.SetActive(false);
         svatcha = Instantiate(svatcha, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
         svatcha.gameObject.SetActive(false);
-        SpawnPlanet(2);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
 	}
 
     public void SpawnPlanet(int index)
@@ -56,7 +50,6 @@ public class PlanetSpawner : MonoBehaviour {
         }
         GameObject message = Instantiate(messageList[index], new Vector3(SCREEN_RIGHT + 2.76f, -9.0f, 1), new Quaternion(0, 0, 0, 0)) as GameObject;
         
-        // cometSpawner.TurnSpawningOff();
         switch (index)
         {
             case 0:
