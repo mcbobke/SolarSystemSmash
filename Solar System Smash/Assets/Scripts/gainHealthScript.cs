@@ -3,14 +3,35 @@ using System.Collections;
 
 public class gainHealthScript : MonoBehaviour {
 
+	private Renderer r;
+
 	// Use this for initialization
 	void Start () {
 	
+		r = GetComponent<Renderer> ();
+		StartCoroutine (Blink ());
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
+
+		//InvokeRepeating("Blink", 0, 0.4);
 	
+	}
+
+
+	
+	public IEnumerator Blink()
+	{
+		while(true)
+		{
+			r.enabled = false;
+			yield return new WaitForSeconds(0.2f);
+			r.enabled = true;
+			yield return new WaitForSeconds(0.2f);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {

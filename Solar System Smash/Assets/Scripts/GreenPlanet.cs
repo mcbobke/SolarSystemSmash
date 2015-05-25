@@ -25,6 +25,7 @@ public class GreenPlanet : MonoBehaviour {
 		if (col.gameObject.name == "Projectile(Clone)") {
 			
 			health--;
+			Destroy(col.gameObject);
 			
 		}
 	}
