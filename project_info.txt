@@ -1,0 +1,24 @@
+Solar System SMASH
+
+Roster
+------------------
+Matt Bobke - mbobke@uci.edu
+Nicholas Rusbarsky - nrusbars@uci.edu
+Vincent Chang - vincenjc@uci.edu
+Premnishanth Kothandaraman - pkothand@uci.edu
+
+Description
+------------------
+Two players take control of the Moon and the Sun in a fight to defend the Earth from
+comets and hostile planets. The sun is able to move vertically and shoot fireballs
+at oncoming enemies, and the moon is able to take a few of the comets into orbit to allow
+the sun time to shoot down the others.
+
+Each planet that spawns has an adverse effect on one or both of the players, and the players
+must change their playstyle and strategy to defeat the bosses.
+
+How to Play
+------------------
+The Sun player uses the up and down arrows and the mouse to aim fireballs. Left click to fire.
+
+The Moon player uses WASD to move.
