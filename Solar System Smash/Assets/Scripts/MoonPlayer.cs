@@ -60,7 +60,7 @@ public class MoonPlayer : MonoBehaviour {
 	{
 		immune = true;
 		isControlSwitched = false;
-		timer = 10;
+		timer = 5;
 	}
 	
 	void Update () {
