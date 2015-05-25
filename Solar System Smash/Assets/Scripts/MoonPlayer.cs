@@ -9,7 +9,7 @@ public class MoonPlayer : MonoBehaviour {
 	private float speed;
 	private bool isControlSwitched = false;
 	private bool greenPlanet = false;
-	public Transform target;
+	private GameObject target;
     public static int cometCount = 0;	
 	private Vector3 healthPos;
 	private bool immune = false;
@@ -24,7 +24,8 @@ public class MoonPlayer : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 	    cometCount = 0;
 		controlSwitchState = isControlSwitched;
-
+        target = GameObject.FindGameObjectWithTag("Planet3");
+        target.tag = "Planet3";
 	}
 
 	void gainHealth()
@@ -149,10 +150,10 @@ public class MoonPlayer : MonoBehaviour {
 			} 
 		}
 
-		if (col.gameObject.name == "Projectile(Clone)" && healthBarSliderMoon.value > 0) {
+		if ((col.gameObject.name == "Projectile(Clone)" || col.gameObject.name == "Planet1Projectile(Clone)") && healthBarSliderMoon.value > 0) {
 
 			applyDamage();
-
+            Destroy(col.gameObject);
 		}
 	}
 
