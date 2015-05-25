@@ -2,7 +2,6 @@
 
 Moon and planets get pushed by projectiles but shouldn't 
 No comets after 2nd boss destroyed
-1st boss doesn't shoot projectiles
 
 
 Include win scene and lose scene in build settings

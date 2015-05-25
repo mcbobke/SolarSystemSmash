@@ -37,12 +37,16 @@ public class PlanetSpawner : MonoBehaviour {
         toklar.gameObject.SetActive(false);
         //svatcha = Instantiate(svatcha, new Vector3(SCREEN_RIGHT + 1.76f, SCREEN_HEIGHT / 2, 1), new Quaternion(0, 0, 0, 0)) as BluePlanet;
         svatcha.gameObject.SetActive(false);
+        //hPowerup = Instantiate(healthPowerup, new Vector3(Random.Range(-7.0f, 0.0f), Random.Range(-4.0f, 4.0f), 0), new Quaternion(0, 0, 0, 0)) as gainHealthScript;
+        //iPowerup = Instantiate(immunePowerup, new Vector3(Random.Range(-7f, 0f), Random.Range(-4f, 4f), 0), new Quaternion(0, 0, 0, 0)) as ImmunityScript;
+
 	}
 
     public void SpawnPlanet(int index)
     {
-        hPowerup = Instantiate(healthPowerup, new Vector3(Random.Range(-7.0f, 0.0f), Random.Range(-4.0f, 4.0f), 0), new Quaternion(0, 0, 0, 0)) as gainHealthScript;
-        iPowerup = Instantiate(immunePowerup, new Vector3(Random.Range(-7f, 0f), Random.Range(-4f, 4f), 0), new Quaternion(0, 0, 0, 0)) as ImmunityScript;
+        //hPowerup.gameObject.SetActive(true);
+        //iPowerup.gameObject.SetActive(true);
+
         switch (index)
         {
             case 0:
@@ -107,8 +111,8 @@ public class PlanetSpawner : MonoBehaviour {
         }
         zorgna.IsActive = true;
         zorgna.GetComponent<Collider2D>().enabled = true;
-        Destroy(hPowerup.gameObject);
-        Destroy(iPowerup.gameObject);
+        //hPowerup.gameObject.SetActive(false);
+        //iPowerup.gameObject.SetActive(false);
     }
 
     private IEnumerator reenableGreenPlanet()
@@ -120,8 +124,8 @@ public class PlanetSpawner : MonoBehaviour {
         GreenPlanet.isActive = true;
         toklar.GetComponent<PlanetRandomMovement>().IsActive = true;
         toklar.GetComponent<Collider2D>().enabled = true;
-        Destroy(hPowerup.gameObject);
-        Destroy(iPowerup.gameObject);
+        //hPowerup.gameObject.SetActive(false);
+        //iPowerup.gameObject.SetActive(false);
 
     }
 
@@ -134,8 +138,8 @@ public class PlanetSpawner : MonoBehaviour {
         svatcha.GetComponent<PlanetRandomMovement>().IsActive = true;
         svatcha.GetComponent<BluePlanet>().enabled = true;
         svatcha.GetComponent<Collider2D>().enabled = true;
-        Destroy(hPowerup.gameObject);
-        Destroy(iPowerup.gameObject);
+        //hPowerup.gameObject.SetActive(false);
+        //iPowerup.gameObject.SetActive(false);
 
     }
 
