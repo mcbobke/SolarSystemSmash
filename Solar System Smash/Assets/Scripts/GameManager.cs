@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
             SpawnPlanet(2);
     }
 
+    public void cometDestroyed()
+    {
+        numCometsDestroyed += 1;
+    }
+
     private void SpawnPlanet(int index)
     {
         cometSpawner.TurnSpawningOff();
