@@ -15,6 +15,7 @@ TagManager:
   - BottomBoundary
   - Planet1Projectile
   - Sun
+  - Planet3
   layers:
   - Default
   - TransparentFX

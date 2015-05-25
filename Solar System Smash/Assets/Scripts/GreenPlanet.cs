@@ -5,7 +5,7 @@ public class GreenPlanet : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	private int health = 10;
-	public static bool isActive = true;
+	public static bool isActive = false;
 	private int count = 1;
 	// Use this for initialization
 	void Start () {
@@ -40,6 +40,7 @@ public class GreenPlanet : MonoBehaviour {
 
 		if(health == 0)
 		{
+            //GameObject.Find("GameManager").
 			Destroy(this.gameObject);
 			GameObject.FindGameObjectWithTag ("Moon").BroadcastMessage("setGreenPlanet");
 		}
