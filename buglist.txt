@@ -1,0 +1,4 @@
+Random movement of blue planet stops
+
+Moon stops attracting comets at some point
+
